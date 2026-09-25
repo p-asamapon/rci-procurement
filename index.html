@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<title>LME Aluminium Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root {
+    --ground: #f1f5f9;
+    --surface: #ffffff;
+    --sunken: #f6f8fb;
+    --line: #dde4ec;
+    --ink: #142230;
+    --muted: #566575;
+    --faint: #8a97a5;
+
+    --hero-a: #0b4f63;
+    --hero-b: #0e7490;
+    --hero-ink: #ffffff;
+
+    --accent: #0e7490;
+    --accent-ink: #ffffff;
+    --accent-soft: #dff1f5;
+    --band: rgba(14, 116, 144, 0.16);
+
+    --c-price: #2563eb;  --c-price-soft: #e4ecfd;
+    --c-yoy: #c2620a;    --c-yoy-soft: #fbeedd;
+    --c-range: #7c3aed;  --c-range-soft: #efe7fd;
+    --c-ai: #0f766e;     --c-ai-soft: #e0f3f0;
+
+    --rise: #c2410c; --rise-soft: #fde8df;
+    --fall: #15803d; --fall-soft: #dff3e6;
+    --flat: #8a6d0b; --flat-soft: #f6efd2;
+
+    --shadow: 0 1px 2px rgba(20, 34, 48, 0.05), 0 6px 20px rgba(20, 34, 48, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #0e151b; --surface: #172129; --sunken: #1c2831; --line: #2a3945;
+      --ink: #e7eef3; --muted: #a3b1bc; --faint: #748491;
+      --hero-a: #0a3a48; --hero-b: #0b5f75; --hero-ink: #f1f8fa;
+      --accent: #4fc3d9; --accent-ink: #0a1a1f; --accent-soft: #173842; --band: rgba(79, 195, 217, 0.18);
+      --c-price: #7aa7ff; --c-price-soft: #1b2a47;
+      --c-yoy: #f3a55a;   --c-yoy-soft: #3a2a18;
+      --c-range: #b79cff; --c-range-soft: #2b2244;
+      --c-ai: #5fd3c4;    --c-ai-soft: #15332f;
+      --rise: #f5946f; --rise-soft: #3e241b; --fall: #63d38f; --fall-soft: #173522; --flat: #e0c864; --flat-soft: #37311a;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #0e151b; --surface: #172129; --sunken: #1c2831; --line: #2a3945;
+    --ink: #e7eef3; --muted: #a3b1bc; --faint: #748491;
+    --hero-a: #0a3a48; --hero-b: #0b5f75; --hero-ink: #f1f8fa;
+    --accent: #4fc3d9; --accent-ink: #0a1a1f; --accent-soft: #173842; --band: rgba(79, 195, 217, 0.18);
+    --c-price: #7aa7ff; --c-price-soft: #1b2a47;
+    --c-yoy: #f3a55a;   --c-yoy-soft: #3a2a18;
+    --c-range: #b79cff; --c-range-soft: #2b2244;
+    --c-ai: #5fd3c4;    --c-ai-soft: #15332f;
+    --rise: #f5946f; --rise-soft: #3e241b; --fall: #63d38f; --fall-soft: #173522; --flat: #e0c864; --flat-soft: #37311a;
+    --shadow: none;
+  }
+
+  [hidden] { display: none !important; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: "Sarabun", "Leelawadee UI", Tahoma, sans-serif;
+    font-size: 16px; line-height: 1.65;
+  }
+  .num { font-family: "IBM Plex Mono", ui-monospace, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  .muted { color: var(--muted); }
+  .small { font-size: 0.84rem; }
+  .wrap { max-width: 1120px; margin-inline: auto; padding-inline: 16px; }
+
+  /* ---------- hero ---------- */
+  .hero { background: linear-gradient(120deg, var(--hero-a), var(--hero-b)); color: var(--hero-ink); padding-block: 26px 70px; }
+  .hero-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 32px; }
+  .hero .eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; opacity: 0.8; }
+  .hero h1 { font-size: 1.7rem; line-height: 1.25; font-weight: 700; margin-top: 2px; }
+  .hero .sub { font-size: 0.88rem; opacity: 0.85; margin-top: 4px; }
+  .hero-price { text-align: right; }
+  .hero-price .big { font-size: 2.3rem; font-weight: 600; line-height: 1.1; }
+  .hero-price .unit { font-size: 0.85rem; opacity: 0.8; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; border-radius: 999px; padding: 3px 12px; }
+  .hero .pill { background: rgba(255, 255, 255, 0.16); color: var(--hero-ink); margin-top: 6px; }
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+
+  /* ---------- KPI cards (overlap hero) ---------- */
+  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: -48px; }
+  .kpi { background: var(--surface); border-radius: 14px; padding: 14px 16px 16px; box-shadow: var(--shadow); border: 1px solid var(--line); display: grid; gap: 4px; align-content: start; position: relative; overflow: hidden; }
+  .kpi::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--kc); }
+  .kpi-head { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--muted); }
+  .ico { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; background: var(--kcs); color: var(--kc); flex: none; }
+  .ico svg { width: 16px; height: 16px; }
+  .kpi .v { font-size: 1.6rem; font-weight: 600; line-height: 1.2; color: var(--kc); }
+  .kpi .d { font-size: 0.8rem; color: var(--muted); }
+  .kpi .d.key { font-size: 0.74rem; color: var(--faint); letter-spacing: 0.02em; }
+  .kpi .arrows { letter-spacing: -0.1em; }
+  .k-price { --kc: var(--c-price); --kcs: var(--c-price-soft); }
+  .k-yoy { --kc: var(--c-yoy); --kcs: var(--c-yoy-soft); }
+  .k-range { --kc: var(--c-range); --kcs: var(--c-range-soft); }
+  .k-trend.rise { --kc: var(--rise); --kcs: var(--rise-soft); }
+  .k-trend.fall { --kc: var(--fall); --kcs: var(--fall-soft); }
+  .k-trend.flat { --kc: var(--flat); --kcs: var(--flat-soft); }
+
+  /* ---------- AI summary ---------- */
+  .ai { margin-top: 18px; background: var(--c-ai-soft); border: 1px solid color-mix(in srgb, var(--c-ai) 30%, transparent); border-radius: 14px; padding: 16px 20px; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; }
+  .ai .ico { --kc: var(--c-ai); --kcs: var(--surface); width: 36px; height: 36px; border-radius: 10px; grid-row: span 3; }
+  .ai-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+  .ai-head h2 { font-size: 1.02rem; color: var(--c-ai); }
+  .tag { font-size: 0.72rem; font-weight: 600; border-radius: 999px; padding: 1px 9px; background: var(--surface); color: var(--c-ai); }
+  .ai-text { line-height: 1.8; max-width: 100ch; }
+  .ai-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; margin-top: 4px; }
+  .ai-foot { font-size: 0.76rem; color: var(--muted); }
+
+  /* ---------- section nav ---------- */
+  .jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--ground) 88%, transparent); backdrop-filter: blur(6px); padding-block: 10px; margin-top: 14px; }
+  .jump nav { display: flex; flex-wrap: wrap; gap: 8px; }
+  .jump a { text-decoration: none; font-size: 0.88rem; font-weight: 500; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px; display: inline-flex; align-items: center; gap: 8px; }
+  .jump a:hover { border-color: var(--accent); color: var(--accent); }
+  .jump a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .jump .n { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 0.72rem; font-weight: 700; color: #fff; background: var(--sc); }
+
+  /* ---------- sections ---------- */
+  main { display: grid; gap: 26px; padding-block: 6px 40px; }
+  .sec { scroll-margin-top: 64px; display: grid; gap: 14px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+  .sec-head .n { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-weight: 700; color: #fff; background: var(--sc); }
+  .sec-head h2 { font-size: 1.15rem; }
+  .sec-head p { color: var(--muted); font-size: 0.86rem; flex-basis: 100%; padding-left: 42px; margin-top: -6px; }
+  .s1 { --sc: var(--accent); } .s2 { --sc: var(--c-ai); } .s3 { --sc: var(--c-range); }
+  /* tooltip บนกราฟ */
+  .has-tip { position: relative; }
+  .has-tip svg.chart { cursor: crosshair; touch-action: pan-y; }
+  .tip { position: absolute; z-index: 6; pointer-events: none; background: var(--ink); color: var(--surface); font-size: 0.8rem; line-height: 1.5; padding: 7px 11px; border-radius: 8px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18); white-space: nowrap; }
+  .tip b { font-weight: 600; }
+  .tip .tip-sub { opacity: 0.8; }
+  .tip .tip-ok { color: #7ee2a8; } .tip .tip-miss { color: #ffb199; }
+  svg.chart .unit { fill: var(--ink); font-weight: 600; }
+  svg.chart .hv-line { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+  svg.chart .hv-dot { fill: var(--surface); stroke: var(--accent); stroke-width: 2.5; }
+  .s4 { --sc: var(--c-yoy); } .s5 { --sc: var(--c-price); } .s6 { --sc: #475569; }
+  #view-steel main { padding-top: 0; }
+  #view-steel .sec { gap: 16px; }
+
+  /* แท็บเลือกโลหะ (บนแถบหัว) */
+  .metal-tabs { display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 18px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); }
+  .metal-tabs button { font: inherit; font-size: 0.92rem; font-weight: 600; border: 0; border-radius: 999px; padding: 6px 18px; cursor: pointer; background: transparent; color: var(--hero-ink); opacity: 0.8; }
+  .metal-tabs button:hover { opacity: 1; background: rgba(255, 255, 255, 0.12); }
+  .metal-tabs button[aria-selected="true"] { background: var(--surface); color: var(--hero-a); opacity: 1; }
+  .metal-tabs button:focus-visible { outline: 2px solid var(--hero-ink); outline-offset: 2px; }
+  .st-kpis .kpi .v { font-size: 1.4rem; }
+
+  .hero .thb { opacity: 0.95; font-size: 0.95rem; }
+
+  /* ข้อมูลตลาดประกอบ */
+  .mk-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .mk { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; box-shadow: var(--shadow); display: grid; gap: 4px; align-content: start; }
+  .mk .k { font-size: 0.8rem; color: var(--muted); }
+  .mk .v { font-size: 1.35rem; font-weight: 600; line-height: 1.25; }
+  .mk .d { font-size: 0.8rem; color: var(--muted); }
+  .mk .up { color: var(--rise); } .mk .down { color: var(--fall); }
+  .spark { width: 100%; height: 44px; display: block; margin-top: 4px; }
+  .spark .ln { fill: none; stroke: var(--c-yoy); stroke-width: 2; }
+  .spark .ar { fill: color-mix(in srgb, var(--c-yoy) 14%, transparent); stroke: none; }
+  .spark .zero { stroke: var(--line); stroke-dasharray: 3 3; }
+  .spark .end { fill: var(--c-yoy); }
+  .caveat { font-size: 0.8rem; color: var(--flat); background: var(--flat-soft); border-radius: 8px; padding: 6px 12px; }
+
+  /* การซื้อจริง */
+  .buy-sum { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: baseline; }
+  .buy-sum .big { font-size: 1.8rem; font-weight: 600; }
+  .good { color: var(--fall); } .bad { color: var(--rise); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow); display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .card h3 { font-size: 0.98rem; }
+  .grid-2 { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 18px; height: 10px; border-radius: 2px; display: inline-block; }
+  .sw.line { height: 3px; background: var(--ink); }
+  .sw.mid { height: 0; border-top: 2px dashed var(--accent); }
+  .sw.band { background: var(--band); border: 1px solid var(--accent); }
+  .sw.miss { width: 10px; height: 10px; border-radius: 50%; background: var(--rise); }
+
+  svg.chart { width: 100%; height: auto; display: block; }
+  svg.chart text { fill: var(--muted); font-size: 12px; font-family: "Sarabun", Tahoma, sans-serif; }
+  svg.chart .grid { stroke: var(--line); stroke-width: 1; }
+  svg.chart .hist { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: round; }
+  svg.chart .band { fill: var(--band); stroke: none; }
+  svg.chart .edge { fill: none; stroke: var(--accent); stroke-width: 1; opacity: 0.55; }
+  svg.chart .mid { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 5 4; }
+  svg.chart .now { stroke: var(--faint); stroke-dasharray: 2 3; }
+  svg.chart .dot { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+  svg.chart .hit { fill: var(--ink); }
+  svg.chart .miss { fill: var(--rise); }
+  svg.chart .strong { fill: var(--ink); font-weight: 600; }
+  svg.chart .tag { fill: var(--accent); font-weight: 600; }
+
+  /* month ranges */
+  .months { display: grid; gap: 10px; }
+  .mrow { display: grid; grid-template-columns: 4.6em 1fr; gap: 4px 10px; align-items: center; }
+  .mrow .m { font-weight: 600; font-size: 0.88rem; }
+  .mrow .vals { grid-column: 2; display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); }
+  .mrow .vals b { color: var(--ink); font-weight: 600; }
+  .bar { position: relative; height: 12px; border-radius: 6px; background: var(--sunken); }
+  .bar i { position: absolute; top: 0; bottom: 0; border-radius: 6px; background: linear-gradient(90deg, color-mix(in srgb, var(--c-range) 35%, transparent), color-mix(in srgb, var(--c-range) 70%, transparent)); }
+  .bar b { position: absolute; top: -3px; bottom: -3px; width: 3px; border-radius: 2px; background: var(--c-range); }
+  .bar .now { position: absolute; top: -5px; bottom: -5px; width: 0; border-left: 2px dotted var(--ink); opacity: 0.5; }
+  .note { font-size: 0.8rem; color: var(--muted); }
+  /* บันทึกเทรนด์รายวัน */
+  .s7 { --sc: #0f766e; }
+  .tl-sum { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: baseline; }
+  .tl-sum .big { font-size: 1.7rem; font-weight: 600; }
+  .tl-scroll { max-height: 440px; overflow-y: auto; }
+  .tl-scroll thead th { position: sticky; top: 0; background: var(--surface); }
+  .bdg { display: inline-block; font-size: 0.78rem; font-weight: 600; border-radius: 999px; padding: 1px 10px; }
+  .bdg.hit { background: var(--fall-soft); color: var(--fall); }
+  .bdg.miss { background: var(--rise-soft); color: var(--rise); }
+  .bdg.wait, .bdg.flat { background: var(--sunken); color: var(--muted); }
+  .src { font-size: 0.7rem; font-weight: 500; border-radius: 4px; padding: 0 6px; margin-left: 6px; }
+  .src.live { background: var(--accent-soft); color: var(--accent); }
+  .src.back { background: var(--sunken); color: var(--faint); }
+  td.up { color: var(--rise); } td.down { color: var(--fall); }
+  .sig.rise { color: var(--rise); } .sig.fall { color: var(--fall); } .sig.flat { color: var(--flat); }
+  .explain { font-size: 0.86rem; color: var(--ink); background: var(--c-range-soft); border-radius: 8px; padding: 8px 12px; }
+
+  /* chat */
+  .chat { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 18em); gap: 16px; }
+  .thread { display: grid; gap: 10px; align-content: start; max-height: 440px; min-height: 180px; overflow-y: auto; padding: 4px 2px; }
+  /* แถวข้อความ: avatar + ชื่อ + กล่องข้อความ (AI ซ้าย · เรา ขวา) */
+  .row { display: flex; align-items: flex-end; gap: 8px; }
+  .row.me { flex-direction: row-reverse; }
+  .avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; flex: none; color: #fff; }
+  .avatar svg { width: 18px; height: 18px; }
+  .row.bot .avatar { background: var(--c-ai); }
+  .row.me .avatar { background: var(--c-price); }
+  .bubble-wrap { display: grid; gap: 2px; min-width: 0; max-width: min(80ch, 82%); }
+  .row.me .bubble-wrap { justify-items: end; }
+  .who { font-size: 0.72rem; color: var(--faint); padding-inline: 4px; }
+  .msg { padding: 10px 14px; border-radius: 14px; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .msg.me { background: var(--c-price); color: #fff; border-bottom-right-radius: 4px; }
+  .msg.bot { background: var(--sunken); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+  .msg.bot.wait { color: var(--muted); font-style: italic; }
+  .composer { display: flex; gap: 8px; }
+  .composer input { flex: 1; min-width: 0; font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); }
+  .composer input:focus-visible { outline: 2px solid var(--c-ai); outline-offset: 1px; }
+  .btn { font: inherit; font-weight: 600; border: 0; border-radius: 10px; padding: 0 18px; background: var(--c-ai); color: #fff; cursor: pointer; }
+  .btn:disabled { opacity: 0.5; cursor: default; }
+  .ghost { font: inherit; font-size: 0.85rem; border: 1px solid var(--line); background: var(--surface); color: var(--c-ai); border-radius: 8px; padding: 5px 12px; cursor: pointer; text-decoration: none; }
+  .ghost:hover { border-color: var(--c-ai); }
+  .btn:focus-visible, .ghost:focus-visible, .chips button:focus-visible { outline: 2px solid var(--c-ai); outline-offset: 2px; }
+  .chips { display: grid; gap: 8px; align-content: start; }
+  .chips button { font: inherit; font-size: 0.86rem; text-align: left; border: 1px solid var(--line); background: var(--sunken); color: var(--ink); border-radius: 10px; padding: 9px 12px; cursor: pointer; }
+  .chips button:hover { border-color: var(--c-ai); color: var(--c-ai); }
+  .chips button:disabled { opacity: 0.5; cursor: default; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* accuracy */
+  .scores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .score { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: grid; gap: 2px; box-shadow: var(--shadow); }
+  .score .v { font-size: 1.9rem; font-weight: 600; color: var(--c-range); line-height: 1.15; }
+  .score .v.lead { color: var(--accent); }
+  .score .d { font-size: 0.82rem; color: var(--muted); }
+  details { border-top: 1px solid var(--line); padding-top: 10px; }
+  summary { cursor: pointer; font-weight: 500; color: var(--accent); font-size: 0.9rem; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .table-scroll { overflow-x: auto; margin-top: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-weight: 500; color: var(--muted); font-size: 0.78rem; }
+  tbody tr:last-child td { border-bottom: 0; }
+
+  /* footer */
+  footer { border-top: 1px solid var(--line); padding-block: 22px 96px;  /* เว้นที่ให้ปุ่ม LINE ลอย */ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 20px; }
+  .line-box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; }
+  .line-box h3 { font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+  .line-box .ico { --kc: #06c755; --kcs: #e2f8ea; }
+  .cmds { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cmds code { font-family: inherit; font-size: 0.82rem; background: var(--sunken); border: 1px solid var(--line); border-radius: 6px; padding: 1px 8px; }
+  .method { font-size: 0.8rem; color: var(--muted); display: grid; gap: 6px; }
+  .method strong { color: var(--ink); font-weight: 600; }
+
+  /* LINE */
+  .line-fab { position: fixed; left: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 20; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px 10px 12px; border-radius: 999px; background: #06c755; color: #fff; font-weight: 600; font-size: 0.92rem; text-decoration: none; box-shadow: 0 6px 18px rgba(6, 199, 85, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15); }
+  .line-fab:hover { background: #05b34c; }
+  .line-fab:focus-visible, .line-btn:focus-visible { outline: 3px solid color-mix(in srgb, #06c755 45%, transparent); outline-offset: 3px; }
+  .line-fab svg, .line-btn svg { width: 22px; height: 22px; flex: none; }
+  .line-btn { justify-self: start; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 10px; background: #06c755; color: #fff; font-weight: 600; font-size: 0.88rem; text-decoration: none; }
+  .line-btn:hover { background: #05b34c; }
+
+  @media (max-width: 900px) {
+    .kpis, .mk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-2, .chat, footer { grid-template-columns: minmax(0, 1fr); }
+    .chips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px) {
+    .hero-price { text-align: left; }
+    .kpi .v { font-size: 1.3rem; }
+    .scores, .mk-grid { grid-template-columns: minmax(0, 1fr); }
+    .chips { grid-template-columns: minmax(0, 1fr); }
+    .hero h1 { font-size: 1.4rem; }
+    .line-fab { left: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+    .sec-head p { padding-left: 0; }
+  }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="metal-tabs" role="tablist" aria-label="เลือกโลหะ">
+      <button role="tab" id="tab-alu" aria-controls="view-alu" aria-selected="true">อลูมิเนียม</button>
+      <button role="tab" id="tab-steel" aria-controls="view-steel" aria-selected="false" hidden>เหล็ก HRC</button>
+    </nav>
+    <div class="hero-row">
+      <div>
+        <p class="eyebrow" id="hero-eyebrow">LME ALUMINIUM · ฝ่ายจัดซื้อ</p>
+        <h1 id="hero-title">ราคาอลูมิเนียม แนวโน้ม และช่วงราคา</h1>
+        <p class="sub" id="asof"></p>
+      </div>
+      <div class="hero-price">
+        <div class="big num" id="hero-price"></div>
+        <div class="unit" id="hero-unit"></div>
+        <div class="unit thb num" id="hero-thb" hidden></div>
+        <span class="pill" id="hero-trend"><span class="dot"></span><span id="hero-trend-t"></span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="view-alu" role="tabpanel" aria-labelledby="tab-alu">
+  <section class="kpis" aria-label="สรุปวันนี้">
+    <div class="kpi k-price">
+      <div class="kpi-head"><span class="ico"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 2v12M11 5H6.5a2 2 0 0 0 0 4h3a2 2 0 0 1 0 4H5"/></svg></span>ราคาล่าสุด (Cash)</div>
+      <span class="v num" id="price"></span>
+      <span class="d" id="price-d"></span>
+    </div>
+    <div class="kpi k-yoy">
+      <div class="kpi-head"><span class="ico"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg></span>เทียบปีก่อน (YoY)</div>
+      <span class="v num" id="yoy"></span>
+      <span class="d">ราคาวันนี้ เทียบวันเดียวกันปีที่แล้ว</span>
+    </div>
+    <div class="kpi k-trend" id="trend-kpi">
+      <div class="kpi-head"><span class="ico"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-4 3 3 5-6M10 5h4v4"/></svg></span>เทรนด์ตอนนี้</div>
+      <span class="v" id="trend"></span>
+      <span class="d" id="trend-d"></span>
+      <span class="d key" id="trend-key"></span>
+    </div>
+    <div class="kpi k-range">
+      <div class="kpi-head"><span class="ico"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 8h12M4 5v6M12 5v6"/></svg></span><span id="f3-k"></span></div>
+      <span class="v num" id="f3"></span>
+      <span class="d">โอกาส 90% ที่ค่าเฉลี่ยเดือนจะอยู่ในช่วงนี้</span>
+    </div>
+  </section>
+
+  <section class="ai" id="ai" aria-labelledby="ai-h" hidden>
+    <span class="ico"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l1.6 3.6 3.9.4-2.9 2.6.8 3.9L8 10l-3.4 2 .8-3.9-2.9-2.6 3.9-.4z"/></svg></span>
+    <div class="ai-head"><h2 id="ai-h">AI วิเคราะห์แนวโน้มวันนี้</h2><span class="tag" id="ai-model"></span></div>
+    <p class="ai-text" id="ai-text"></p>
+    <div class="ai-row">
+      <p class="ai-foot" id="ai-foot"></p>
+      <a class="ghost" href="#ask" id="ask-open" hidden>ถาม AI ต่อ →</a>
+    </div>
+  </section>
+
+  <div class="jump">
+    <nav aria-label="ไปยังส่วน">
+      <a href="#range" class="s1"><span class="n"></span>ราคาและช่วงคาดการณ์</a>
+      <a href="#ask" class="s2" hidden><span class="n"></span>ถาม AI</a>
+      <a href="#market" class="s4" hidden><span class="n"></span>ข้อมูลตลาด</a>
+      <a href="#buys" class="s5" hidden><span class="n"></span>การซื้อจริง</a>
+      <a href="#tlog" class="s7" hidden><span class="n"></span>บันทึกรายวัน</a>
+      <a href="#accuracy" class="s3"><span class="n"></span>ความแม่นยำ</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- 1 -->
+    <section class="sec s1" id="range" aria-labelledby="range-h">
+      <div class="sec-head">
+        <span class="n"></span><h2 id="range-h">ราคาและช่วงคาดการณ์ 6 เดือน</h2>
+        <p>ราคาเฉลี่ยรายเดือนจริงย้อนหลัง 24 เดือน และช่วงที่ราคาเฉลี่ยแต่ละเดือนข้างหน้ามีโอกาส 90% จะอยู่</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="legend">
+            <span><i class="sw line"></i>ราคาจริง (เฉลี่ยทั้งเดือน)</span>
+            <span><i class="sw mid"></i>ค่ากลาง</span>
+            <span><i class="sw band"></i>ช่วง 90%</span>
+          </div>
+          <svg class="chart" id="fan" viewBox="0 0 640 430" role="img" aria-label="กราฟราคาเฉลี่ยรายเดือน 24 เดือน และช่วงคาดการณ์ 6 เดือน"></svg>
+        </div>
+        <div class="card">
+          <h3 id="months-h">ช่วงราคาเฉลี่ยรายเดือน</h3>
+          <div class="months" id="months"></div>
+          <p class="note" id="months-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="sec s2" id="ask" aria-labelledby="ask-h" hidden>
+      <div class="sec-head">
+        <span class="n"></span><h2 id="ask-h">ถาม AI เรื่องราคาอลูมิเนียม</h2>
+        <p>ตอบจากตัวเลขในหน้านี้เท่านั้น ไม่แต่งราคาเอง · <span id="ask-by">ตอบโดย AI</span></p>
+      </div>
+      <div class="card chat">
+        <div style="display:grid; gap:12px; min-width:0">
+          <div class="thread" id="thread" aria-live="polite"></div>
+          <form class="composer" id="composer">
+            <label for="ask-input" class="sr-only">คำถาม</label>
+            <input id="ask-input" type="text" autocomplete="off" maxlength="500" placeholder="พิมพ์คำถาม…">
+            <button type="submit" class="btn" id="ask-send">ส่ง</button>
+            <button type="button" class="ghost" id="ask-stop" hidden>หยุด</button>
+          </form>
+          <p class="note" id="ask-note"></p>
+        </div>
+        <div class="chips" id="chips" aria-label="คำถามแนะนำ"></div>
+      </div>
+    </section>
+
+
+    <!-- ข้อมูลตลาดประกอบ -->
+    <section class="sec s4" id="market" aria-labelledby="mk-h" hidden>
+      <div class="sec-head">
+        <span class="n"></span><h2 id="mk-h">ข้อมูลตลาดประกอบ</h2>
+        <p>ภาพรวมที่ควรรู้ก่อนตัดสินใจซื้อ อัปเดตพร้อมราคาทุกเช้า</p>
+      </div>
+      <div class="mk-grid">
+        <div class="mk" id="mk-month"></div>
+        <div class="mk" id="mk-fx"></div>
+        <div class="mk" id="mk-stock"></div>
+        <div class="mk" id="mk-spread"></div>
+      </div>
+      <p class="caveat">สต็อกและส่วนต่างราคาเป็นข้อมูลประกอบ ยังไม่ได้ทดสอบว่าช่วยทายราคาได้ จึงไม่ได้ใช้ในเทรนด์หรือช่วงราคา</p>
+    </section>
+
+    <!-- การซื้อจริง -->
+    <section class="sec s5" id="buys" aria-labelledby="buy-h" hidden>
+      <div class="sec-head">
+        <span class="n"></span><h2 id="buy-h">การซื้อจริง เทียบราคา LME</h2>
+        <p>ราคาที่จ่ายจริงเทียบกับราคา LME เฉลี่ยของเดือนนั้น (แสดงเป็น % เท่านั้น ไม่แสดงราคาหรือปริมาณจริง)</p>
+      </div>
+      <div class="card">
+        <div class="buy-sum" id="buy-sum"></div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>วันที่ซื้อ</th><th>Supplier</th><th>เทียบเฉลี่ยเดือน</th><th>เทียบราคา Cash วันนั้น</th></tr></thead>
+            <tbody id="buy-table"></tbody>
+          </table>
+        </div>
+        <p class="note">ติดลบ = จ่ายถูกกว่าราคา LME · ราคาที่ Supplier คิดอาจรวม premium และค่าขนส่ง จึงเป็นบวกได้ตามปกติ ให้ดูแนวโน้มว่าดีขึ้นหรือแย่ลง</p>
+      </div>
+    </section>
+
+    <!-- บันทึกเทรนด์รายวัน -->
+    <section class="sec s7" id="tlog" aria-labelledby="tlog-h" hidden>
+      <div class="sec-head">
+        <span class="n"></span><h2 id="tlog-h">บันทึกเทรนด์รายวัน</h2>
+        <p>แต่ละวันระบบบอกเทรนด์อะไร และราคาอีก 1 เดือนต่อมา (21 วันทำการ) เป็นไปตามนั้นไหม</p>
+      </div>
+      <div class="card">
+        <div class="tl-sum" id="tlog-sum"></div>
+        <div class="table-scroll tl-scroll">
+          <table>
+            <thead><tr><th>วันที่ (ราคาปิด)</th><th>ราคา</th><th>ระบบบอก</th><th>ราคา 1 เดือนต่อมา</th><th>เปลี่ยน</th></tr></thead>
+            <tbody id="tlog-body"></tbody>
+          </table>
+        </div>
+        <p class="note" id="tlog-note"></p>
+      </div>
+    </section>
+
+    <!-- ความแม่นยำ -->
+    <section class="sec s3" id="accuracy" aria-labelledby="acc-h">
+      <div class="sec-head">
+        <span class="n"></span><h2 id="acc-h">ความแม่นยำ (ทดสอบย้อนหลัง)</h2>
+        <p>ทุกเดือนใช้เฉพาะข้อมูลที่รู้ ณ ตอนนั้น แล้วเทียบกับราคาจริงที่เกิดขึ้น</p>
+      </div>
+      <div class="scores">
+        <div class="score"><span class="v lead num" id="score"></span><span class="d" id="score-d"></span></div>
+        <div class="score"><span class="v num" id="hit"></span><span class="d" id="hit-d"></span></div>
+        <div class="score"><span class="v num" id="err6"></span><span class="d" id="err6-d"></span></div>
+      </div>
+      <div class="card">
+        <div class="legend">
+          <span><i class="sw line"></i>ราคาจริง</span>
+          <span><i class="sw band"></i>ช่วงที่คาดไว้ล่วงหน้า 1 เดือน</span>
+          <span><i class="sw miss"></i>หลุดช่วง</span>
+        </div>
+        <p class="explain" id="avp-explain"></p>
+        <svg class="chart" id="avp" viewBox="0 0 1000 340" role="img" aria-label="กราฟราคาจริงเทียบช่วงคาดการณ์ล่วงหน้า 1 เดือน"></svg>
+        <p class="note" id="avp-note"></p>
+        <details>
+          <summary>ดูตารางแยกตามระยะเวลา (สำหรับทีมตรวจสอบ)</summary>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>คาดล่วงหน้า</th><th>ครอบราคาจริง</th><th>คลาดเฉลี่ย: เท่าวันนี้</th><th>คลาดเฉลี่ย: ลากเส้นตรง</th><th>จำนวนเดือน</th></tr></thead>
+              <tbody id="bt-table"></tbody>
+            </table>
+          </div>
+          <p class="note" style="margin-top:8px">ลากเส้นตรงผ่าน 12 เดือนล่าสุดแล้วต่อออกไป คลาดมากกว่า "ราคาเท่าวันนี้" ทุกระยะ จึงไม่ใช้เป็นตัวพยากรณ์</p>
+        </details>
+      </div>
+    </section>
+  </main>
+  </div>
+
+  <div id="view-steel" role="tabpanel" aria-labelledby="tab-steel" hidden>
+  <main>
+    <!-- เหล็ก HRC -->
+    <section class="sec s6" id="steel-body" aria-label="เหล็ก HRC" hidden>
+      <div class="kpis st-kpis">
+        <div class="kpi k-price"><div class="kpi-head">ราคาล่าสุด</div><span class="v num" id="st-price"></span><span class="d" id="st-price-d"></span></div>
+        <div class="kpi k-yoy"><div class="kpi-head">เทียบปีก่อน (YoY)</div><span class="v num" id="st-yoy"></span><span class="d">ราคาวันนี้ เทียบวันเดียวกันปีที่แล้ว</span></div>
+        <div class="kpi k-trend" id="st-trend-kpi"><div class="kpi-head">เทรนด์ตอนนี้</div><span class="v" id="st-trend"></span><span class="d" id="st-trend-d"></span></div>
+        <div class="kpi k-range"><div class="kpi-head" id="st-f3-k"></div><span class="v num" id="st-f3"></span><span class="d" id="st-f3-d"></span></div>
+      </div>
+      <div class="card">
+        <div class="legend">
+          <span><i class="sw line"></i><span id="st-line-lab">ราคาจริง (เฉลี่ยทั้งเดือน)</span></span>
+          <span><i class="sw mid"></i>ค่ากลาง</span>
+          <span><i class="sw band"></i>ช่วงคาดการณ์</span>
+        </div>
+        <svg class="chart" id="st-fan" viewBox="0 0 640 430" role="img" aria-label="กราฟราคาเหล็ก HRC รายเดือน และช่วงคาดการณ์ 6 เดือน"></svg>
+      </div>
+      <p class="caveat" id="st-caveat"></p>
+      <div class="card" id="st-tlog" hidden>
+        <h3>บันทึกเทรนด์รายวัน (เหล็ก)</h3>
+        <div class="tl-sum" id="st-tlog-sum"></div>
+        <div class="table-scroll tl-scroll">
+          <table>
+            <thead><tr><th>วันที่ (ราคาปิด)</th><th>ราคา</th><th>ระบบบอก</th><th>ราคา 1 เดือนต่อมา</th><th>เปลี่ยน</th></tr></thead>
+            <tbody id="st-tlog-body"></tbody>
+          </table>
+        </div>
+        <p class="note" id="st-tlog-note"></p>
+      </div>
+      <p class="note" id="st-asof"></p>
+    </section>
+  </main>
+  </div>
+
+  <footer>
+    <div class="line-box">
+      <h3><span class="ico"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M8 2C4.4 2 1.5 4.3 1.5 7.2c0 2.6 2.3 4.7 5.4 5.1l-.4 2.2 3-2.2c3-.5 5-2.6 5-5.1C14.5 4.3 11.6 2 8 2z"/></svg></span>ใช้ผ่าน LINE ได้ด้วย</h3>
+      <p class="small muted">เปิดแชท bot แล้วกดเมนูด้านล่าง หรือพิมพ์</p>
+      <div class="cmds"><code>ราคา</code><code>วิเคราะห์</code><code>ควรซื้อช่วงไหน</code><code>วิธีใช้</code></div>
+      <a class="line-btn" id="line-btn" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5 1.1-.5 5.9-3.5 8-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>เปิดแชทใน LINE <span id="line-id"></span></a>
+    </div>
+    <div class="method">
+      <p><strong>แหล่งข้อมูล:</strong> <span id="source"></span> อัปเดตอัตโนมัติทุกเช้า</p>
+      <p><strong>เทรนด์:</strong> <span id="rule"></span>. เฉลี่ย 1 เดือนสูงกว่า 3 เดือนเกินเกณฑ์ = ขาขึ้น, ต่ำกว่า = ขาลง, นอกนั้น = ทรงตัว</p>
+      <p><strong>ช่วงราคา:</strong> ดูว่าในอดีต (2008 ถึงปัจจุบัน) หลังวันสิ้นเดือน ราคาเฉลี่ยของ 1–6 เดือนถัดไปเคยขยับไปได้กว้างแค่ไหน แล้วนำช่วง 5%–95% มาคูณกับราคาล่าสุด</p>
+      <p>เป็นข้อมูลประกอบการตัดสินใจ ไม่ใช่การรับประกันราคา</p>
+    </div>
+  </footer>
+</div>
+
+<a class="line-fab" id="line-fab" href="#" target="_blank" rel="noopener" aria-label="เปิดแชท bot ใน LINE" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5 1.1-.5 5.9-3.5 8-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>ถามใน LINE</a>
+
+<script>
+const D = {"asof": "2026-09-24", "source": "LME Cash Settlement (westmetall.com)", "unit": "USD/ตัน", "price": 3228.0, "yoy": 0.2307, "month_to_date_avg": 3286.6, "month_to_date_label": "ก.ย. 69", "trend": {"signal": 1, "label": "ขาขึ้น", "ma_short": 3279.6, "ma_long": 3227.7, "gap": 0.0161, "rule": "เฉลี่ย 20 วันทำการ เทียบ 60 วันทำการ, เกณฑ์ ±1%", "backtest_months": 222, "hit_rate": 0.591, "naive_hit_rate": 0.566}, "forecast": [{"month": "2026-10", "label": "ต.ค. 69", "low": 3020, "mid": 3226, "high": 3426}, {"month": "2026-11", "label": "พ.ย. 69", "low": 2846, "mid": 3233, "high": 3648}, {"month": "2026-12", "label": "ธ.ค. 69", "low": 2751, "mid": 3233, "high": 3725}, {"month": "2027-01", "label": "ม.ค. 70", "low": 2602, "mid": 3268, "high": 3833}, {"month": "2027-02", "label": "ก.พ. 70", "low": 2613, "mid": 3245, "high": 3919}, {"month": "2027-03", "label": "มี.ค. 70", "low": 2526, "mid": 3267, "high": 4073}], "band_backtest": [{"h": 1, "n": 175, "coverage": 0.9029, "mape_naive": 0.0262, "mape_band_mid": 0.0267, "mape_linear": 0.0577}, {"h": 2, "n": 174, "coverage": 0.931, "mape_naive": 0.0513, "mape_band_mid": 0.0519, "mape_linear": 0.0737}, {"h": 3, "n": 173, "coverage": 0.9306, "mape_naive": 0.0692, "mape_band_mid": 0.0708, "mape_linear": 0.0885}, {"h": 4, "n": 172, "coverage": 0.9244, "mape_naive": 0.0809, "mape_band_mid": 0.0849, "mape_linear": 0.103}, {"h": 5, "n": 171, "coverage": 0.9006, "mape_naive": 0.0902, "mape_band_mid": 0.0913, "mape_linear": 0.119}, {"h": 6, "n": 170, "coverage": 0.9235, "mape_naive": 0.1002, "mape_band_mid": 0.1029, "mape_linear": 0.1375}], "coverage_overall": 0.9188, "actual_vs_pred": [{"month": "2024-09", "label": "ก.ย. 67", "actual": 2451.7, "low": 2303, "mid": 2459, "high": 2615, "inside": true}, {"month": "2024-10", "label": "ต.ค. 67", "actual": 2598.4, "low": 2442, "mid": 2605, "high": 2771, "inside": true}, {"month": "2024-11", "label": "พ.ย. 67", "actual": 2583.2, "low": 2448, "mid": 2611, "high": 2778, "inside": true}, {"month": "2024-12", "label": "ธ.ค. 67", "actual": 2538.4, "low": 2406, "mid": 2565, "high": 2730, "inside": true}, {"month": "2025-01", "label": "ม.ค. 68", "actual": 2575.0, "low": 2354, "mid": 2509, "high": 2670, "inside": true}, {"month": "2025-02", "label": "ก.พ. 68", "actual": 2653.4, "low": 2431, "mid": 2591, "high": 2757, "inside": true}, {"month": "2025-03", "label": "มี.ค. 68", "actual": 2657.2, "low": 2469, "mid": 2631, "high": 2799, "inside": true}, {"month": "2025-04", "label": "เม.ย. 68", "actual": 2381.2, "low": 2358, "mid": 2513, "high": 2672, "inside": true}, {"month": "2025-05", "label": "พ.ค. 68", "actual": 2442.4, "low": 2252, "mid": 2399, "high": 2552, "inside": true}, {"month": "2025-06", "label": "มิ.ย. 68", "actual": 2516.5, "low": 2290, "mid": 2440, "high": 2594, "inside": true}, {"month": "2025-07", "label": "ก.ค. 68", "actual": 2604.2, "low": 2429, "mid": 2588, "high": 2751, "inside": true}, {"month": "2025-08", "label": "ส.ค. 68", "actual": 2594.0, "low": 2418, "mid": 2576, "high": 2737, "inside": true}, {"month": "2025-09", "label": "ก.ย. 68", "actual": 2653.2, "low": 2457, "mid": 2617, "high": 2780, "inside": true}, {"month": "2025-10", "label": "ต.ค. 68", "actual": 2786.3, "low": 2502, "mid": 2665, "high": 2830, "inside": true}, {"month": "2025-11", "label": "พ.ย. 68", "actual": 2822.9, "low": 2705, "mid": 2881, "high": 3060, "inside": true}, {"month": "2025-12", "label": "ธ.ค. 68", "actual": 2875.5, "low": 2651, "mid": 2822, "high": 2997, "inside": true}, {"month": "2026-01", "label": "ม.ค. 69", "actual": 3148.4, "low": 2785, "mid": 2964, "high": 3147, "inside": false}, {"month": "2026-02", "label": "ก.พ. 69", "actual": 3065.3, "low": 2918, "mid": 3107, "high": 3299, "inside": true}, {"month": "2026-03", "label": "มี.ค. 69", "actual": 3370.2, "low": 2964, "mid": 3154, "high": 3350, "inside": false}, {"month": "2026-04", "label": "เม.ย. 69", "actual": 3600.6, "low": 3366, "mid": 3581, "high": 3806, "inside": true}, {"month": "2026-05", "label": "พ.ค. 69", "actual": 3670.2, "low": 3311, "mid": 3522, "high": 3742, "inside": true}, {"month": "2026-06", "label": "มิ.ย. 69", "actual": 3458.6, "low": 3541, "mid": 3767, "high": 4001, "inside": false}, {"month": "2026-07", "label": "ก.ค. 69", "actual": 3156.0, "low": 2904, "mid": 3102, "high": 3296, "inside": true}, {"month": "2026-08", "label": "ส.ค. 69", "actual": 3249.6, "low": 2989, "mid": 3194, "high": 3392, "inside": true}], "linear_compare": {"slope_per_month": 0.0215, "forecast_6m": 3958}, "history": [{"month": "2024-10", "label": "ต.ค. 67", "avg": 2598.4}, {"month": "2024-11", "label": "พ.ย. 67", "avg": 2583.2}, {"month": "2024-12", "label": "ธ.ค. 67", "avg": 2538.4}, {"month": "2025-01", "label": "ม.ค. 68", "avg": 2575.0}, {"month": "2025-02", "label": "ก.พ. 68", "avg": 2653.4}, {"month": "2025-03", "label": "มี.ค. 68", "avg": 2657.2}, {"month": "2025-04", "label": "เม.ย. 68", "avg": 2381.2}, {"month": "2025-05", "label": "พ.ค. 68", "avg": 2442.4}, {"month": "2025-06", "label": "มิ.ย. 68", "avg": 2516.5}, {"month": "2025-07", "label": "ก.ค. 68", "avg": 2604.2}, {"month": "2025-08", "label": "ส.ค. 68", "avg": 2594.0}, {"month": "2025-09", "label": "ก.ย. 68", "avg": 2653.2}, {"month": "2025-10", "label": "ต.ค. 68", "avg": 2786.3}, {"month": "2025-11", "label": "พ.ย. 68", "avg": 2822.9}, {"month": "2025-12", "label": "ธ.ค. 68", "avg": 2875.5}, {"month": "2026-01", "label": "ม.ค. 69", "avg": 3148.4}, {"month": "2026-02", "label": "ก.พ. 69", "avg": 3065.3}, {"month": "2026-03", "label": "มี.ค. 69", "avg": 3370.2}, {"month": "2026-04", "label": "เม.ย. 69", "avg": 3600.6}, {"month": "2026-05", "label": "พ.ค. 69", "avg": 3670.2}, {"month": "2026-06", "label": "มิ.ย. 69", "avg": 3458.6}, {"month": "2026-07", "label": "ก.ค. 69", "avg": 3156.0}, {"month": "2026-08", "label": "ส.ค. 69", "avg": 3249.6}, {"month": "2026-09", "label": "ก.ย. 69", "avg": 3286.6}], "fx": {"rate": 33.45, "change_1m": 0.0179, "source": "open.er-api.com", "monthly": {"2023-09": 36.555, "2023-10": 36.444, "2023-11": 35.395, "2023-12": 34.981, "2024-01": 35.222, "2024-02": 35.849, "2024-03": 35.95, "2024-04": 36.767, "2024-05": 36.635, "2024-06": 36.709, "2024-07": 36.215, "2024-08": 34.739, "2024-09": 33.254, "2024-10": 33.409, "2024-11": 34.444, "2024-12": 34.143, "2025-01": 34.229, "2025-02": 33.794, "2025-03": 33.775, "2025-04": 33.729, "2025-05": 32.97, "2025-06": 32.584, "2025-07": 32.455, "2025-08": 32.413, "2025-09": 31.964, "2025-10": 32.545, "2025-11": 32.37, "2025-12": 31.575, "2026-01": 31.275, "2026-02": 31.245, "2026-03": 32.263, "2026-04": 32.285, "2026-05": 32.493, "2026-06": 32.899, "2026-07": 33.493, "2026-08": 33.009, "2026-09": 33.45}}, "market": {"prev_month": {"month": "2026-08", "label": "ส.ค. 69", "avg": 3249.6}, "this_month": {"month": "2026-09", "label": "ก.ย. 69", "avg": 3286.6, "days": 18}, "stock": {"latest": 241375, "change_1m": -0.0221, "history": [{"label": "ต.ค. 68", "v": 558050}, {"label": "พ.ย. 68", "v": 539050}, {"label": "ธ.ค. 68", "v": 511750}, {"label": "ม.ค. 69", "v": 495725}, {"label": "ก.พ. 69", "v": 465550}, {"label": "มี.ค. 69", "v": 416775}, {"label": "เม.ย. 69", "v": 367050}, {"label": "พ.ค. 69", "v": 338000}, {"label": "มิ.ย. 69", "v": 303675}, {"label": "ก.ค. 69", "v": 264400}, {"label": "ส.ค. 69", "v": 246725}, {"label": "ก.ย. 69", "v": 241375}]}, "spread": {"latest": 24.5, "avg_1m": -3.9, "history": [{"label": "ต.ค. 68", "v": -2.3}, {"label": "พ.ย. 68", "v": 22.8}, {"label": "ธ.ค. 68", "v": 34.5}, {"label": "ม.ค. 69", "v": 4.8}, {"label": "ก.พ. 69", "v": 25.5}, {"label": "มี.ค. 69", "v": -28.5}, {"label": "เม.ย. 69", "v": -54.9}, {"label": "พ.ค. 69", "v": -69.4}, {"label": "มิ.ย. 69", "v": -19.8}, {"label": "ก.ค. 69", "v": -7.0}, {"label": "ส.ค. 69", "v": 1.6}, {"label": "ก.ย. 69", "v": -6.4}]}}, "purchases": null, "trend_log": {"rows": [{"date": "2026-09-24", "month": "2026-09", "after_month": null, "price": 3228.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": true}, {"date": "2026-09-23", "month": "2026-09", "after_month": null, "price": 3240.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": true}, {"date": "2026-09-22", "month": "2026-09", "after_month": null, "price": 3242.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-21", "month": "2026-09", "after_month": null, "price": 3262.5, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-18", "month": "2026-09", "after_month": null, "price": 3285.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-17", "month": "2026-09", "after_month": null, "price": 3303.5, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-16", "month": "2026-09", "after_month": null, "price": 3310.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-15", "month": "2026-09", "after_month": null, "price": 3260.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-14", "month": "2026-09", "after_month": null, "price": 3311.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-11", "month": "2026-09", "after_month": null, "price": 3274.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-10", "month": "2026-09", "after_month": null, "price": 3343.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-09", "month": "2026-09", "after_month": null, "price": 3352.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-08", "month": "2026-09", "after_month": null, "price": 3325.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-07", "month": "2026-09", "after_month": null, "price": 3310.0, "after": null, "signal": 1, "icon": "▲", "verdict": "wait", "live": false}, {"date": "2026-09-04", "month": "2026-09", "after_month": null, "price": 3292.5, "after": null, "signal": 0, "icon": "●", "verdict": "wait", "live": false}, {"date": "2026-09-03", "month": "2026-09", "after_month": null, "price": 3303.0, "after": null, "signal": 0, "icon": "●", "verdict": "wait", "live": false}, {"date": "2026-09-02", "month": "2026-09", "after_month": null, "price": 3255.5, "after": null, "signal": 0, "icon": "●", "verdict": "wait", "live": false}, {"date": "2026-09-01", "month": "2026-09", "after_month": null, "price": 3261.0, "after": null, "signal": 0, "icon": "●", "verdict": "wait", "live": false}, {"date": "2026-08-28", "month": "2026-08", "after_month": null, "price": 3222.0, "after": null, "signal": 0, "icon": "●", "verdict": "wait", "live": false}, {"date": "2026-08-27", "month": "2026-08", "after_month": null, "price": 3212.5, "after": null, "signal": 0, "icon": "●", "verdict": "wait", "live": false}, {"date": "2026-08-26", "month": "2026-08", "after_month": null, "price": 3227.5, "after": null, "signal": 0, "icon": "●", "verdict": "wait", "live": false}, {"date": "2026-08-25", "month": "2026-08", "after_month": "2026-09", "price": 3188.0, "after": 3228.0, "signal": 0, "icon": "●", "verdict": "flat", "live": false}, {"date": "2026-08-24", "month": "2026-08", "after_month": "2026-09", "price": 3215.5, "after": 3240.0, "signal": -1, "icon": "▼", "verdict": "miss", "live": false}, {"date": "2026-08-21", "month": "2026-08", "after_month": "2026-09", "price": 3227.0, "after": 3242.0, "signal": -1, "icon": "▼", "verdict": "miss", "live": false}, {"date": "2026-08-20", "month": "2026-08", "after_month": "2026-09", "price": 3182.0, "after": 3262.5, "signal": -1, "icon": "▼", "verdict": "miss", "live": false}, {"date": "2026-08-19", "month": "2026-08", "after_month": "2026-09", "price": 3191.5, "after": 3285.0, "signal": -1, "icon": "▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-18", "month": "2026-08", "after_month": "2026-09", "price": 3219.0, "after": 3303.5, "signal": -1, "icon": "▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-17", "month": "2026-08", "after_month": "2026-09", "price": 3272.0, "after": 3310.0, "signal": -1, "icon": "▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-14", "month": "2026-08", "after_month": "2026-09", "price": 3248.0, "after": 3260.0, "signal": -1, "icon": "▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-13", "month": "2026-08", "after_month": "2026-09", "price": 3279.0, "after": 3311.0, "signal": -1, "icon": "▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-12", "month": "2026-08", "after_month": "2026-09", "price": 3307.5, "after": 3274.0, "signal": -1, "icon": "▼▼", "verdict": "hit", "live": false}, {"date": "2026-08-11", "month": "2026-08", "after_month": "2026-09", "price": 3373.0, "after": 3343.0, "signal": -1, "icon": "▼▼▼", "verdict": "hit", "live": false}, {"date": "2026-08-10", "month": "2026-08", "after_month": "2026-09", "price": 3327.5, "after": 3352.0, "signal": -1, "icon": "▼▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-07", "month": "2026-08", "after_month": "2026-09", "price": 3279.5, "after": 3325.0, "signal": -1, "icon": "▼▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-06", "month": "2026-08", "after_month": "2026-09", "price": 3261.0, "after": 3310.0, "signal": -1, "icon": "▼▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-05", "month": "2026-08", "after_month": "2026-09", "price": 3229.0, "after": 3292.5, "signal": -1, "icon": "▼▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-04", "month": "2026-08", "after_month": "2026-09", "price": 3271.0, "after": 3303.0, "signal": -1, "icon": "▼▼▼", "verdict": "miss", "live": false}, {"date": "2026-08-03", "month": "2026-08", "after_month": "2026-09", "price": 3260.0, "after": 3255.5, "signal": -1, "icon": "▼▼▼", "verdict": "hit", "live": false}, {"date": "2026-07-31", "month": "2026-07", "after_month": "2026-09", "price": 3196.0, "after": 3261.0, "signal": -1, "icon": "▼▼▼", "verdict": "miss", "live": false}, {"date": "2026-07-30", "month": "2026-07", "after_month": "2026-08", "price": 3231.0, "after": 3222.0, "signal": -1, "icon": "▼▼▼", "verdict": "hit", "live": false}], "summary": {"days": 227, "hit_rate": 0.559, "up_rate": 0.708, "from": "2025-09-01", "to": "2026-08-25", "live_since": "2026-09-23"}}, "steel": {"asof": "2026-09-24", "price": 1302.0, "yoy": 0.582, "month_to_date_avg": 1235.6, "month_to_date_label": "ก.ย. 69", "trend": {"signal": 1, "label": "ขาขึ้น", "ma_short": 1231.0, "ma_long": 1194.4, "gap": 0.0306, "rule": "เฉลี่ย 20 วันทำการ เทียบ 60 วันทำการ, เกณฑ์ ±1%", "backtest_months": 212, "hit_rate": 0.688, "naive_hit_rate": 0.701}, "forecast": [{"month": "2026-10", "label": "ต.ค. 69", "low": 1250, "mid": 1296, "high": 1371}, {"month": "2026-11", "label": "พ.ย. 69", "low": 1131, "mid": 1292, "high": 1555}, {"month": "2026-12", "label": "ธ.ค. 69", "low": 1060, "mid": 1289, "high": 1703}, {"month": "2027-01", "label": "ม.ค. 70", "low": 996, "mid": 1290, "high": 1911}, {"month": "2027-02", "label": "ก.พ. 70", "low": 946, "mid": 1282, "high": 1953}, {"month": "2027-03", "label": "มี.ค. 70", "low": 915, "mid": 1307, "high": 2022}], "history": [{"month": "2024-10", "label": "ต.ค. 67", "avg": 708.5}, {"month": "2024-11", "label": "พ.ย. 67", "avg": 693.6}, {"month": "2024-12", "label": "ธ.ค. 67", "avg": 688.9}, {"month": "2025-01", "label": "ม.ค. 68", "avg": 704.5}, {"month": "2025-02", "label": "ก.พ. 68", "avg": 785.4}, {"month": "2025-03", "label": "มี.ค. 68", "avg": 924.3}, {"month": "2025-04", "label": "เม.ย. 68", "avg": 929.2}, {"month": "2025-05", "label": "พ.ค. 68", "avg": 882.7}, {"month": "2025-06", "label": "มิ.ย. 68", "avg": 874.6}, {"month": "2025-07", "label": "ก.ค. 68", "avg": 875.7}, {"month": "2025-08", "label": "ส.ค. 68", "avg": 832.0}, {"month": "2025-09", "label": "ก.ย. 68", "avg": 807.0}, {"month": "2025-10", "label": "ต.ค. 68", "avg": 816.1}, {"month": "2025-11", "label": "พ.ย. 68", "avg": 858.1}, {"month": "2025-12", "label": "ธ.ค. 68", "avg": 907.7}, {"month": "2026-01", "label": "ม.ค. 69", "avg": 944.4}, {"month": "2026-02", "label": "ก.พ. 69", "avg": 983.7}, {"month": "2026-03", "label": "มี.ค. 69", "avg": 1021.5}, {"month": "2026-04", "label": "เม.ย. 69", "avg": 1049.5}, {"month": "2026-05", "label": "พ.ค. 69", "avg": 1086.5}, {"month": "2026-06", "label": "มิ.ย. 69", "avg": 1130.6}, {"month": "2026-07", "label": "ก.ค. 69", "avg": 1160.7}, {"month": "2026-08", "label": "ส.ค. 69", "avg": 1196.3}, {"month": "2026-09", "label": "ก.ย. 69", "avg": 1235.6}], "coverage_overall": 0.8406, "source": "CME Hot-Rolled Coil (Yahoo Finance: HRC=F)", "unit": "USD/short ton", "price_metric": 1435.2, "flat_days": 0, "trend_log": {"rows": [{"date": "2026-09-24", "month": "2026-09", "after_month": null, "price": 1302.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": true}, {"date": "2026-09-23", "month": "2026-09", "after_month": null, "price": 1237.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": true}, {"date": "2026-09-22", "month": "2026-09", "after_month": null, "price": 1237.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-21", "month": "2026-09", "after_month": null, "price": 1237.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-18", "month": "2026-09", "after_month": null, "price": 1237.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-17", "month": "2026-09", "after_month": null, "price": 1237.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-16", "month": "2026-09", "after_month": null, "price": 1237.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-15", "month": "2026-09", "after_month": null, "price": 1232.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-14", "month": "2026-09", "after_month": null, "price": 1234.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-11", "month": "2026-09", "after_month": null, "price": 1234.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-10", "month": "2026-09", "after_month": null, "price": 1233.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-09", "month": "2026-09", "after_month": null, "price": 1234.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-08", "month": "2026-09", "after_month": null, "price": 1230.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-04", "month": "2026-09", "after_month": null, "price": 1226.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-03", "month": "2026-09", "after_month": null, "price": 1223.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-02", "month": "2026-09", "after_month": null, "price": 1223.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-09-01", "month": "2026-09", "after_month": null, "price": 1212.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-08-31", "month": "2026-08", "after_month": null, "price": 1207.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-08-28", "month": "2026-08", "after_month": null, "price": 1205.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-08-27", "month": "2026-08", "after_month": null, "price": 1203.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-08-26", "month": "2026-08", "after_month": null, "price": 1199.0, "after": null, "signal": 1, "icon": "▲▲", "verdict": "wait", "live": false}, {"date": "2026-08-25", "month": "2026-08", "after_month": "2026-09", "price": 1196.0, "after": 1302.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-24", "month": "2026-08", "after_month": "2026-09", "price": 1196.0, "after": 1237.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-21", "month": "2026-08", "after_month": "2026-09", "price": 1194.0, "after": 1237.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-20", "month": "2026-08", "after_month": "2026-09", "price": 1194.0, "after": 1237.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-19", "month": "2026-08", "after_month": "2026-09", "price": 1194.0, "after": 1237.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-18", "month": "2026-08", "after_month": "2026-09", "price": 1196.0, "after": 1237.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-17", "month": "2026-08", "after_month": "2026-09", "price": 1196.0, "after": 1237.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-14", "month": "2026-08", "after_month": "2026-09", "price": 1196.0, "after": 1232.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-13", "month": "2026-08", "after_month": "2026-09", "price": 1196.0, "after": 1234.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-12", "month": "2026-08", "after_month": "2026-09", "price": 1196.0, "after": 1234.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-11", "month": "2026-08", "after_month": "2026-09", "price": 1195.0, "after": 1233.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-10", "month": "2026-08", "after_month": "2026-09", "price": 1195.0, "after": 1234.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-07", "month": "2026-08", "after_month": "2026-09", "price": 1195.0, "after": 1230.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-06", "month": "2026-08", "after_month": "2026-09", "price": 1194.0, "after": 1226.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-05", "month": "2026-08", "after_month": "2026-09", "price": 1193.0, "after": 1223.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-04", "month": "2026-08", "after_month": "2026-09", "price": 1193.0, "after": 1223.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-08-03", "month": "2026-08", "after_month": "2026-09", "price": 1190.0, "after": 1212.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-07-31", "month": "2026-07", "after_month": "2026-08", "price": 1191.0, "after": 1207.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}, {"date": "2026-07-30", "month": "2026-07", "after_month": "2026-08", "price": 1193.0, "after": 1205.0, "signal": 1, "icon": "▲▲", "verdict": "hit", "live": false}], "summary": {"days": 240, "hit_rate": 0.838, "up_rate": 0.956, "from": "2025-08-27", "to": "2026-08-25", "live_since": "2026-09-23"}}}, "ai_analysis": {"text": "ณ วันที่ 24 กันยายน 2569 ราคาอลูมิเนียม LME ล่าสุดอยู่ที่ ฿107,977 ต่อตัน โดยมีแนวโน้มเป็นขาขึ้นในระดับอ่อน สำหรับช่วงราคา 90% ในระยะ 3 เดือนข้างหน้า คาดการณ์ว่าจะอยู่ระหว่าง ฿92,021–฿124,601 ต่อตัน โดยเป็นค่าเฉลี่ยของเดือนธันวาคม 2569 ซึ่งเป็นเพียงช่วงราคาประมาณการเท่านั้น ความน่าเชื่อถือของการคาดการณ์ทิศทางเทรนด์อยู่ที่ 59% และช่วงราคาดังกล่าวครอบคลุมราคาจริงได้ 92% ด้วยแนวโน้มขาขึ้นในระดับอ่อนนี้ ฝ่ายจัดซื้ออาจพิจารณาทยอยซื้ออลูมิเนียมเผื่อไว้เพื่อบริหารความเสี่ยงด้านราคา", "model": "gemini-2.5-flash", "generated_at": "2026-09-25T09:50"}, "line_message": "อลูมิเนียม LME ณ 2026-09-24\nราคา $3,228/ตัน (YoY +23.1%) ≈ ฿107,977/ตัน\n📈 เทรนด์: ขาขึ้น ▲ (เฉลี่ย 1 เดือน vs 3 เดือน +1.6%)\n\nช่วงราคาเฉลี่ยรายเดือน (โอกาส 90%, บาทคิดด้วยอัตราวันนี้)\n• ต.ค. 69: ฿101,019–114,600\n• ธ.ค. 69: ฿92,021–124,601\n• มี.ค. 70: ฿84,495–136,242\n\nทดสอบย้อนหลัง: ช่วงนี้ครอบราคาจริง 92%\n\n🔩 เหล็ก HRC (CME สหรัฐฯ): ฿48,007/ตัน (CME $1,302/short ton) ขาขึ้น ▲▲ (ใช้ดูภาพกว้าง ความแม่นยังต่ำกว่าอลูมิเนียม)\n\n🤖 AI วิเคราะห์: ณ วันที่ 24 กันยายน 2569 ราคาอลูมิเนียม LME ล่าสุดอยู่ที่ ฿107,977 ต่อตัน โดยมีแนวโน้มเป็นขาขึ้นในระดับอ่อน สำหรับช่วงราคา 90% ในระยะ 3 เดือนข้างหน้า คาดการณ์ว่าจะอยู่ระหว่าง ฿92,021–฿124,601 ต่อตัน โดยเป็นค่าเฉลี่ยของเดือนธันวาคม 2569 ซึ่งเป็นเพียงช่วงราคาประมาณการเท่านั้น ความน่าเชื่อถือของการคาดการณ์ทิศทางเทรนด์อยู่ที่ 59% และช่วงราคาดังกล่าวครอบคลุมราคาจริงได้ 92% ด้วยแนวโน้มขาขึ้นในระดับอ่อนนี้ ฝ่ายจัดซื้ออาจพิจารณาทยอยซื้ออลูมิเนียมเผื่อไว้เพื่อบริหารความเสี่ยงด้านราคา", "line_oa_id": "@129jalpr"};
+
+const fmt = (v) => Math.round(v).toLocaleString('en-US');
+const fmtK = (v) => (Math.abs(v) >= 10000 ? `${Math.round(v / 1000)}K` : `${(v / 1000).toFixed(2)}K`);
+
+/* ---------- แสดงเป็นบาท ----------
+ * ราคาย้อนหลังใช้อัตราแลกเปลี่ยนเฉลี่ยของเดือนนั้น (FRED) · ช่วงคาดการณ์และราคาปัจจุบันใช้อัตราล่าสุด
+ * เหล็ก: USD/short ton -> บาท/ตันเมตริก · ค่า USD เดิมเก็บไว้ใน D.usd / D.steel.usd */
+const SHORT_TON = 0.907185;
+let CUR = '$', UNIT = 'USD/ตัน', UNIT_STEEL = 'USD/short ton';
+function convertToTHB() {
+  const fx = D.fx;
+  if (!fx || !fx.rate) return;
+  const now = fx.rate, byMonth = fx.monthly || {};
+  const r = (m) => byMonth[m] || now;
+  D.usd = { price: D.price, month_to_date_avg: D.month_to_date_avg };
+  D.price *= now; D.month_to_date_avg *= now;
+  D.trend.ma_short *= now; D.trend.ma_long *= now;
+  D.history.forEach((h) => { h.avg *= r(h.month); });
+  D.forecast.forEach((f) => { f.low *= now; f.mid *= now; f.high *= now; });
+  D.actual_vs_pred.forEach((d) => { const k = r(d.month); d.actual *= k; d.low *= k; d.high *= k; });
+  // ใช้อัตราเดียวกันทั้งแถว (อัตราของวันที่ระบบบอก) – ถูก/ผิดตัดสินจากราคา LME ไม่ใช่จากค่าเงิน
+  const conv = (log, k = 1) => log && log.rows.forEach((row) => {
+    const rate = r(row.month) * k;
+    row.price *= rate;
+    if (row.after != null) row.after *= rate;
+  });
+  conv(D.trend_log);
+  if (D.steel) conv(D.steel.trend_log, 1 / SHORT_TON);
+  const mk = D.market;
+  if (mk) {
+    mk.prev_month.avg *= r(mk.prev_month.month); mk.this_month.avg *= now;
+    mk.spread.latest *= now; mk.spread.avg_1m *= now; mk.spread.history.forEach((h) => { h.v *= now; });
+  }
+  const s = D.steel;
+  if (s) {
+    s.usd = { price: s.price };
+    const k = now / SHORT_TON;
+    s.price *= k; s.month_to_date_avg *= k;
+    s.trend.ma_short *= k; s.trend.ma_long *= k;
+    s.history.forEach((h) => { h.avg *= r(h.month) / SHORT_TON; });
+    s.forecast.forEach((f) => { f.low *= k; f.mid *= k; f.high *= k; });
+  }
+  CUR = '฿'; UNIT = 'บาท/ตัน'; UNIT_STEEL = 'บาท/ตันเมตริก';
+  D.unit = UNIT;
+}
+const pct = (v, d = 1) => (v >= 0 ? '+' : '−') + Math.abs(v * 100).toFixed(d) + '%';
+const $ = (id) => document.getElementById(id);
+const TH_MONTH = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+function thaiDate(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return `${d} ${TH_MONTH[m - 1]} ${y + 543}`;
+}
+/* ความแรงของเทรนด์ – ตรงกับ lme_ai.strength_level: 0 ทรงตัว · 1 อ่อน · 2 ปานกลาง · 3 แรง */
+function strengthLevel(gap) {
+  const g = Math.abs(gap);
+  return g <= 0.01 ? 0 : g < 0.02 ? 1 : g < 0.04 ? 2 : 3;
+}
+function trendStrength(gap) { return ['ไม่ชัด', 'อ่อน', 'ปานกลาง', 'แรง'][strengthLevel(gap)]; }
+function trendIcon(signal, gap) {
+  const level = strengthLevel(gap);
+  return signal === 0 || level === 0 ? '●' : (signal > 0 ? '▲' : '▼').repeat(level);
+}
+
+/* ---------- hero + KPIs ---------- */
+function renderTop() {
+  const t = D.trend;
+  const cls = t.signal > 0 ? 'rise' : t.signal < 0 ? 'fall' : 'flat';
+  const icon = trendIcon(t.signal, t.gap);
+  HERO.alu = {
+    eyebrow: 'LME ALUMINIUM · ฝ่ายจัดซื้อ',
+    title: 'ราคาอลูมิเนียม แนวโน้ม และช่วงราคา',
+    asof: `ข้อมูลถึง ${thaiDate(D.asof)}`,
+    price: CUR + fmt(D.price),
+    unit: `${D.unit} · LME Cash`,
+    sub: D.usd && D.fx ? `LME $${fmt(D.usd.price)}/ตัน · ${D.fx.rate.toFixed(2)} บาท/USD` : '',
+    trend: `${t.label} ${icon}`,
+  };
+
+  $('price').textContent = CUR + fmt(D.price);
+  $('price-d').textContent = `เฉลี่ย ${D.month_to_date_label} ถึงวันนี้ ${CUR}${fmt(D.month_to_date_avg)}`;
+  $('yoy').textContent = pct(D.yoy);
+  $('trend-kpi').classList.add(cls);
+  $('trend').innerHTML = `${t.label} <span class="arrows" title="ความแรง: ${trendStrength(t.gap)}">${icon}</span>`;
+  $('trend-d').textContent = `ราคาเฉลี่ยเดือนนี้ ${t.gap >= 0 ? 'สูง' : 'ต่ำ'}กว่าค่าเฉลี่ย 3 เดือน ${Math.abs(t.gap * 100).toFixed(1)}%`;
+  $('trend-key').textContent = t.signal > 0 ? '▲ เล็กน้อย · ▲▲ ปานกลาง · ▲▲▲ ชัดเจน'
+    : t.signal < 0 ? '▼ เล็กน้อย · ▼▼ ปานกลาง · ▼▼▼ ชัดเจน' : '● ราคาต่างกันไม่ถึง 1%';
+  const f3 = D.forecast[2];
+  $('f3-k').textContent = `ช่วงราคา ${f3.label}`;
+  $('f3').textContent = `${CUR}${fmtK(f3.low)}–${fmtK(f3.high)}`;
+  $('source').textContent = D.source;
+  $('rule').textContent = t.rule;
+}
+
+function renderAI() {
+  const ai = D.ai_analysis;
+  if (!ai) return;
+  const [date, time] = ai.generated_at.split('T');
+  $('ai-text').textContent = ai.text;
+  $('ai-model').textContent = ai.model;
+  $('ai-foot').textContent = `สร้างอัตโนมัติ ${thaiDate(date)} ${time} น. จากตัวเลขในหน้านี้เท่านั้น`;
+  $('ai').hidden = false;
+}
+
+/* ---------- chart helpers ---------- */
+function scale(values, step) {
+  return [Math.floor(Math.min(...values) / step) * step, Math.ceil(Math.max(...values) / step) * step];
+}
+const P = (x, y) => (arr) => arr.map(([i, v]) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+function axes(W, H, L, R, B, yMin, yMax, step, labels, n, x, y, every = 3) {
+  let s = '';
+  for (let v = yMin; v <= yMax; v += step) {
+    s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/>`;
+    s += `<text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${fmtK(v)}</text>`;
+  }
+  labels.forEach((lab, i) => {
+    if (i % every === 0 || i === n - 1) s += `<text x="${x(i)}" y="${H - 10}" text-anchor="middle">${lab}</text>`;
+  });
+  return s;
+}
+
+/* ---------- 1: fan chart + month bars ---------- */
+/* ---------- tooltip บนกราฟ: ชี้เมาส์/แตะแล้วเด้งราคาของเดือนนั้น ----------
+ * items[i] = {v, html} ต่อจุดบนแกน x (i = ลำดับจุด) · x(), y() = ตัวแปลงพิกัดของกราฟนั้น */
+function hoverChart(svgId, W, H, x, y, items, top, bottom) {
+  const svg = $(svgId);
+  const host = svg.parentElement;
+  host.classList.add('has-tip');
+  let tip = host.querySelector('.tip');
+  if (!tip) { tip = document.createElement('div'); tip.className = 'tip'; tip.hidden = true; host.append(tip); }
+  svg.insertAdjacentHTML('beforeend',
+    `<line class="hv-line" x1="0" x2="0" y1="${top}" y2="${bottom}" visibility="hidden"/>`
+    + `<circle class="hv-dot" r="5" visibility="hidden"/>`);
+  const line = svg.querySelector('.hv-line'), dot = svg.querySelector('.hv-dot');
+  const n = items.length;
+  const show = (ev) => {
+    const box = svg.getBoundingClientRect();
+    // viewBox ถูกย่อ/ขยายแบบรักษาสัดส่วน (อาจมีขอบว่างซ้าย-ขวาหรือบน-ล่าง)
+    const s = Math.min(box.width / W, box.height / H);
+    const ox = (box.width - W * s) / 2, oy = (box.height - H * s) / 2;
+    const vx = (ev.clientX - box.left - ox) / s;                    // พิกัดใน viewBox
+    let i = 0, best = Infinity;
+    for (let k = 0; k < n; k++) { const d = Math.abs(x(k) - vx); if (d < best) { best = d; i = k; } }
+    const it = items[i];
+    if (!it) return;
+    line.setAttribute('x1', x(i)); line.setAttribute('x2', x(i)); line.setAttribute('visibility', 'visible');
+    dot.setAttribute('cx', x(i)); dot.setAttribute('cy', y(it.v)); dot.setAttribute('visibility', 'visible');
+    tip.innerHTML = it.html;
+    tip.hidden = false;
+    const hb = host.getBoundingClientRect();
+    const px = box.left - hb.left + ox + x(i) * s;
+    const py = box.top - hb.top + oy + y(it.v) * s;
+    const tw = tip.offsetWidth;
+    tip.style.left = `${Math.min(Math.max(px - tw / 2, 4), hb.width - tw - 4)}px`;
+    tip.style.top = `${Math.max(py - tip.offsetHeight - 14, 4)}px`;
+  };
+  const hide = () => { tip.hidden = true; line.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); };
+  svg.addEventListener('pointermove', show);
+  svg.addEventListener('pointerdown', show);
+  svg.addEventListener('pointerleave', hide);
+}
+
+/* กราฟราคาเฉลี่ยรายเดือน + ช่วงคาดการณ์ (ใช้ทั้งอลูมิเนียมและเหล็ก) */
+/* ระยะห่างเส้นแกน y แบบตัวเลขกลมๆ (1, 2, 2.5, 5 × 10ⁿ) ให้ได้ราว 6 เส้น – ใช้ได้ทั้ง USD และบาท */
+function niceStep(lo, hi, lines = 6) {
+  const raw = (hi - lo) / lines, p = 10 ** Math.floor(Math.log10(raw));
+  return [1, 2, 2.5, 5, 10].map((m) => m * p).find((s) => s >= raw);
+}
+
+function drawFan(svgId, hist, fc, unit = UNIT, W = 640, H = 430) {
+  const L = 50, R = 58, T = 16, B = 34;
+  $(svgId).setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const n = hist.length + fc.length;
+  const all = [...hist.map((h) => h.avg), ...fc.flatMap((f) => [f.low, f.high])];
+  const step = niceStep(Math.min(...all), Math.max(...all));
+  const [yMin, yMax] = scale([...hist.map((h) => h.avg), ...fc.flatMap((f) => [f.low, f.high])], step);
+  const x = (i) => L + (i / (n - 1)) * (W - L - R);
+  const y = (v) => T + (1 - (v - yMin) / (yMax - yMin)) * (H - T - B);
+  const pts = P(x, y);
+  const k = hist.length - 1, a = [k, hist[k].avg];
+  const up = [a, ...fc.map((f, j) => [k + 1 + j, f.high])];
+  const lo = [a, ...fc.map((f, j) => [k + 1 + j, f.low])];
+  const mid = [a, ...fc.map((f, j) => [k + 1 + j, f.mid])];
+  const last = fc[fc.length - 1], ex = x(n - 1) + 8;
+  let s = axes(W, H, L, R, B, yMin, yMax, step, [...hist.map((h) => h.label), ...fc.map((f) => f.label)], n, x, y, 6);
+  s += `<line class="now" x1="${x(k)}" x2="${x(k)}" y1="${T}" y2="${H - B}"/>`;
+  s += `<polygon class="band" points="${pts(up)} ${pts([...lo].reverse())}"/>`;
+  s += `<polyline class="edge" points="${pts(up)}"/><polyline class="edge" points="${pts(lo)}"/>`;
+  s += `<polyline class="mid" points="${pts(mid)}"/>`;
+  s += `<polyline class="hist" points="${pts(hist.map((h, i) => [i, h.avg]))}"/>`;
+  s += `<circle class="dot" cx="${x(k)}" cy="${y(hist[k].avg)}" r="4"/>`;
+  s += `<text class="strong" x="${x(k) - 8}" y="${y(hist[k].avg) - 12}" text-anchor="end">${fmt(hist[k].avg)}</text>`;
+  for (const v of [last.high, last.mid, last.low]) s += `<text class="tag" x="${ex}" y="${y(v) + 4}">${fmt(v)}</text>`;
+  s += `<text x="${x(k) + 6}" y="${T + 12}">คาดการณ์ →</text>`;
+  s += `<text class="unit" x="${L + 4}" y="${T + 12}">หน่วย: ${unit}</text>`;
+  $(svgId).innerHTML = s;
+
+  const items = [
+    ...hist.map((h, i) => ({ v: h.avg, html: `<b>${h.label}</b>${i === k ? ' (ถึงวันนี้)' : ''}<br>ราคาเฉลี่ย <b>${CUR}${fmt(h.avg)}</b>` })),
+    ...fc.map((f) => ({ v: f.mid, html: `<b>${f.label}</b> · คาดการณ์<br>ค่ากลาง <b>${CUR}${fmt(f.mid)}</b><br><span class="tip-sub">ช่วง ${CUR}${fmt(f.low)} – ${CUR}${fmt(f.high)}</span>` })),
+  ];
+  hoverChart(svgId, W, H, x, y, items, T, H - B);
+}
+
+function renderRange() {
+  drawFan('fan', D.history, D.forecast);
+  const fc = D.forecast;
+
+  const lowAll = Math.min(...fc.map((f) => f.low)), highAll = Math.max(...fc.map((f) => f.high));
+  const bx = (v) => ((v - lowAll) / (highAll - lowAll)) * 100;
+  $('months').innerHTML = fc.map((f) => `
+    <div class="mrow">
+      <span class="m">${f.label}</span>
+      <span class="bar" aria-hidden="true">
+        <i style="left:${bx(f.low)}%;right:${100 - bx(f.high)}%"></i>
+        <b style="left:calc(${bx(f.mid)}% - 1.5px)"></b>
+        <span class="now" style="left:${bx(D.price)}%"></span>
+      </span>
+      <span class="vals num"><span>${fmt(f.low)}</span><b>${fmt(f.mid)}</b><span>${fmt(f.high)}</span></span>
+    </div>`).join('');
+  $('months-note').textContent = `แถบสี = ช่วง 90% · ขีดเข้ม = ค่ากลาง · เส้นประ = ราคาวันนี้ ${CUR}${fmt(D.price)} · ยิ่งไกลช่วงยิ่งกว้าง เพราะความไม่แน่นอนสูงขึ้น`;
+}
+
+/* ---------- เหล็ก HRC ---------- */
+function renderSteel() {
+  const s = D.steel;
+  if (!s) return;
+  const t = s.trend, cls = t.signal > 0 ? 'rise' : t.signal < 0 ? 'fall' : 'flat';
+  const f3 = s.forecast[2];
+  $('st-asof').textContent = `ข้อมูลถึง ${thaiDate(s.asof)} · ${s.source}`;
+  $('st-price').textContent = CUR + fmt(s.price);
+  $('st-price-d').textContent = s.usd
+    ? `บาท/ตันเมตริก · ราคา CME $${fmt(s.usd.price)}/short ton`
+    : `ต่อ short ton · ≈ $${fmt(s.price_metric)}/ตันเมตริก`;
+  $('st-yoy').textContent = pct(s.yoy);
+  $('st-trend-kpi').classList.add(cls);
+  $('st-trend').textContent = `${t.label} ${trendIcon(t.signal, t.gap)}`;
+  $('st-trend-d').textContent = `ราคาเฉลี่ยเดือนนี้${t.gap >= 0 ? 'สูง' : 'ต่ำ'}กว่าค่าเฉลี่ย 3 เดือน ${Math.abs(t.gap * 100).toFixed(1)}%`;
+  $('st-f3-k').textContent = `ช่วงราคา ${f3.label}`;
+  $('st-f3').textContent = `${CUR}${fmtK(f3.low)}–${fmtK(f3.high)}`;
+  $('st-f3-d').textContent = `${UNIT_STEEL} · ครอบราคาจริงย้อนหลัง ${Math.round(s.coverage_overall * 100)}%`;
+  $('st-line-lab').textContent = `ราคาจริง (เฉลี่ยทั้งเดือน, ${UNIT_STEEL})`;
+  drawFan('st-fan', s.history, s.forecast, UNIT_STEEL, 1000, 380);  // การ์ดเต็มความกว้าง -> กราฟแนวนอน
+  const flat = s.flat_days >= 3 ? ` · ราคาไม่ขยับ ${s.flat_days} วันทำการล่าสุด (สัญญาซื้อขายน้อย)` : '';
+  $('st-caveat').textContent = `สำหรับเหล็ก เทรนด์ทายทิศทางเดือนถัดไปถูก ${Math.round(t.hit_rate * 100)}% ซึ่งยังไม่ดีกว่าการเดาว่า "เหมือนเดือนก่อน" (${Math.round(t.naive_hit_rate * 100)}%) และช่วงราคาครอบราคาจริง ${Math.round(s.coverage_overall * 100)}% ต่ำกว่าเป้า 90% · เป็นราคาตลาดสหรัฐฯ ใช้ดูทิศทางเหล็กโลกแบบกว้างๆ เท่านั้น${flat}`;
+  showSection('steel-body', true);
+  HERO.steel = {
+    eyebrow: 'STEEL HRC · CME สหรัฐฯ',
+    title: 'ราคาเหล็ก HRC แนวโน้ม และช่วงราคา',
+    asof: `ข้อมูลถึง ${thaiDate(s.asof)}`,
+    price: CUR + fmt(s.price),
+    unit: `${UNIT_STEEL} · CME Hot-Rolled Coil`,
+    sub: s.usd ? `CME $${fmt(s.usd.price)}/short ton` : '',
+    trend: `${t.label} ${trendIcon(t.signal, t.gap)}`,
+  };
+  $('tab-steel').hidden = false;
+}
+
+/* ---------- บันทึกเทรนด์รายวัน ---------- */
+const VERDICT = { hit: '✓ ถูก', miss: '✕ ผิด', wait: '⏳ รอผล', flat: '— ทรงตัว (ไม่นับ)' };
+const SIG_NAME = { 1: 'ขาขึ้น', '-1': 'ขาลง', 0: 'ทรงตัว' };
+function renderTrendLog(prefix, log) {
+  if (!log || !log.rows.length) return false;
+  const s = log.summary;
+  const pctTxt = (v) => (v == null ? '–' : `${Math.round(v * 100)}%`);
+  $(prefix + '-sum').innerHTML = `
+    <div><span class="big num">${pctTxt(s.hit_rate)}</span>
+      <p class="note">ทายถูก 12 เดือนล่าสุดที่รู้ผลแล้ว (${fmt(s.days)} วัน, ไม่นับวันทรงตัว)</p></div>
+    <div><span class="big num">${pctTxt(s.up_rate)}</span>
+      <p class="note">ของวันในช่วงเดียวกันที่ราคา 1 เดือนต่อมาสูงขึ้นจริง (= ถ้าทาย "ขึ้น" ทุกวัน)</p></div>`;
+  $(prefix + '-body').innerHTML = log.rows.map((row) => {
+    const cls = row.signal > 0 ? 'rise' : row.signal < 0 ? 'fall' : 'flat';
+    const src = row.live ? '<span class="src live">แจ้งจริง</span>' : '<span class="src back">ย้อนหลัง</span>';
+    return `<tr><td>${thaiDate(row.date)}${src}</td>
+      <td class="num">${CUR}${fmt(row.price)}</td>
+      <td class="sig ${cls}">${SIG_NAME[row.signal]} ${row.icon}</td>
+      <td class="num">${row.after == null ? '–' : CUR + fmt(row.after)}</td>
+      <td class="num ${row.after == null ? '' : row.after >= row.price ? 'up' : 'down'}">${row.after == null ? '–' : signed(row.after / row.price - 1)}</td>
+</tr>`;
+  }).join('');
+  const since = s.live_since ? thaiDate(s.live_since) : 'วันนี้';
+  $(prefix + '-note').textContent = `"แจ้งจริง" = ระบบบันทึกไว้ในวันนั้นจริง (เริ่ม ${since}) · "ย้อนหลัง" = คำนวณด้วยสูตรเดียวกัน ใช้เฉพาะข้อมูลที่มีถึงวันนั้น`
+    + ' · ราคาทั้งแถวแปลงเป็นบาทด้วยอัตราเดียวกัน (วัดจากราคา LME ไม่รวมผลของค่าเงิน)'
+    + ' · 1 เดือนล่าสุดยังไม่ครบกำหนด จึงยังไม่มีราคา 1 เดือนต่อมา'
+    + ' · เทรนด์ดูจากค่าเฉลี่ยย้อนหลัง ช่วงที่ราคากลับตัวจะผิดติดกันหลายวัน ช่วงที่วิ่งทางเดียวจะถูกเป็นส่วนใหญ่ ให้ดูคู่กับความแม่นยำระยะยาวด้านล่าง';
+  return true;
+}
+
+/* ---------- 3: accuracy ---------- */
+function renderAccuracy() {
+  const bt = D.band_backtest, av = D.actual_vs_pred, t = D.trend;
+  const total = bt.reduce((a, b) => a + b.n, 0);
+  const b6 = bt.find((b) => b.h === 6);
+  $('score').textContent = `${(D.coverage_overall * 100).toFixed(0)}%`;
+  $('score-d').textContent = `ราคาจริงตกอยู่ในช่วง 90% ที่คาดไว้ (ทดสอบ ${fmt(total)} ครั้ง ตั้งแต่ 2012)`;
+  $('hit').textContent = `${(t.hit_rate * 100).toFixed(0)}%`;
+  $('hit-d').textContent = `เทรนด์ทายทิศทางเดือนถัดไปถูก (ถ้าเดาว่าเหมือนเดือนก่อน ได้ ${(t.naive_hit_rate * 100).toFixed(0)}%)`;
+  $('err6').textContent = `±${(b6.mape_naive * 100).toFixed(0)}%`;
+  $('err6-d').textContent = 'ราคาเฉลี่ย 6 เดือนข้างหน้าคลาดจากวันนี้โดยเฉลี่ย จึงบอกเป็นช่วง ไม่ใช่ตัวเลขเดียว';
+
+  const W = 1000, H = 340, L = 58, R = 20, T = 16, B = 38;
+  const m = av.length;
+  const vals = av.flatMap((d) => [d.low, d.high, d.actual]);
+  const step = niceStep(Math.min(...vals), Math.max(...vals));
+  const [yMin, yMax] = scale(vals, step);
+  const x = (i) => L + (i / (m - 1)) * (W - L - R);
+  const y = (v) => T + (1 - (v - yMin) / (yMax - yMin)) * (H - T - B);
+  const pts = P(x, y);
+  let s = axes(W, H, L, R, B, yMin, yMax, step, av.map((d) => d.label), m, x, y);
+  const up = av.map((d, i) => [i, d.high]), lo = av.map((d, i) => [i, d.low]);
+  s += `<polygon class="band" points="${pts(up)} ${pts([...lo].reverse())}"/>`;
+  s += `<polyline class="edge" points="${pts(up)}"/><polyline class="edge" points="${pts(lo)}"/>`;
+  s += `<polyline class="hist" points="${pts(av.map((d, i) => [i, d.actual]))}"/>`;
+  av.forEach((d, i) => { s += `<circle class="${d.inside ? 'hit' : 'miss'}" cx="${x(i)}" cy="${y(d.actual)}" r="${d.inside ? 3 : 5}"/>`; });
+  s += `<text class="unit" x="${L + 4}" y="${T + 12}">หน่วย: ${UNIT}</text>`;
+  $('avp').innerHTML = s;
+  hoverChart('avp', W, H, x, y, av.map((d) => ({
+    v: d.actual,
+    html: `<b>${d.label}</b><br>ราคาจริง <b>${CUR}${fmt(d.actual)}</b><br><span class="tip-sub">คาดไว้ ${CUR}${fmt(d.low)} – ${CUR}${fmt(d.high)}</span><br>`
+      + (d.inside ? '<span class="tip-ok">✓ อยู่ในช่วง</span>' : '<span class="tip-miss">✕ หลุดช่วง</span>'),
+  })), T, H - B);
+  $('avp-explain').textContent = `แต่ละจุดคือราคาเฉลี่ยจริงของเดือนนั้น เทียบกับช่วงที่ระบบคาดไว้ตั้งแต่สิ้นเดือนก่อน`
+    + ` · แสดงถึงเดือนล่าสุดที่จบแล้ว (${av[av.length - 1].label}) เดือนใหม่จะเพิ่มเองทุกต้นเดือน`;
+  const misses = av.filter((d) => !d.inside);
+  $('avp-note').textContent = `24 เดือนล่าสุด หลุดช่วง ${misses.length} เดือน${misses.length ? ` (${misses.map((d) => d.label).join(', ')})` : ''}`;
+
+  $('bt-table').innerHTML = bt.map((b) => `<tr><td>${b.h} เดือน</td><td class="num">${(b.coverage * 100).toFixed(1)}%</td><td class="num">${(b.mape_naive * 100).toFixed(1)}%</td><td class="num">${(b.mape_linear * 100).toFixed(1)}%</td><td class="num">${b.n}</td></tr>`).join('');
+}
+
+/* ---------- ราคา USD ต้นทาง (ตัวเล็กคู่กับราคาบาท) ---------- */
+function renderThb() {
+  const fx = D.fx;
+  if (!fx || !D.usd) return;
+  $('price-d').textContent = `ราคา LME $${fmt(D.usd.price)}/ตัน · อัตรา ${fx.rate.toFixed(2)} บาท/USD`;
+  $('months-h').textContent = 'ช่วงราคาเฉลี่ยรายเดือน (บาท/ตัน)';
+  $('months-note').textContent += ' · แปลงเป็นบาทด้วยอัตราวันนี้';
+}
+
+/* ---------- ข้อมูลตลาดประกอบ ---------- */
+function sparkline(values, { zero = false } = {}) {
+  const W = 200, H = 44, pad = 3;
+  const lo = Math.min(...values, zero ? 0 : Infinity), hi = Math.max(...values, zero ? 0 : -Infinity);
+  const x = (i) => pad + (i / (values.length - 1)) * (W - 2 * pad);
+  const y = (v) => pad + (1 - (v - lo) / ((hi - lo) || 1)) * (H - 2 * pad);
+  const pts = values.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+  const base = zero ? y(0) : H - pad;
+  const last = values.length - 1;
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">`
+    + (zero ? `<line class="zero" x1="0" x2="${W}" y1="${base}" y2="${base}"/>` : '')
+    + `<polygon class="ar" points="${x(0)},${base} ${pts} ${x(last)},${base}"/>`
+    + `<polyline class="ln" points="${pts}"/>`
+    + `<circle class="end" cx="${x(last)}" cy="${y(values[last])}" r="3"/></svg>`;
+}
+const signed = (v, d = 1) => `${v >= 0 ? '+' : '−'}${Math.abs(v * 100).toFixed(d)}%`;
+
+function renderMarket() {
+  const mk = D.market, fx = D.fx;
+  if (!mk) return;
+  const pm = mk.prev_month, tm = mk.this_month, diff = tm.avg / pm.avg - 1;
+  $('mk-month').innerHTML = `<span class="k">ราคาเฉลี่ย เดือนนี้ vs เดือนก่อน</span>
+    <span class="v num ${diff >= 0 ? 'up' : 'down'}">${signed(diff)}</span>
+    <span class="d">${tm.label} (${tm.days} วันทำการ) ${CUR}${fmt(tm.avg)} · ${pm.label} ${CUR}${fmt(pm.avg)}</span>`;
+
+  if (fx) {
+    const c = fx.change_1m;
+    const txt = c == null ? '' : `บาท${c > 0 ? 'อ่อน' : 'แข็ง'}ลง ${Math.abs(c * 100).toFixed(1)}% ใน 1 เดือน · ${c > 0 ? 'ต้นทุนบาทสูงขึ้นแม้ราคา LME เท่าเดิม' : 'ช่วยให้ต้นทุนบาทลดลง'}`;
+    $('mk-fx').innerHTML = `<span class="k">อัตราแลกเปลี่ยน</span>
+      <span class="v num ${c > 0 ? 'up' : 'down'}">${fx.rate.toFixed(2)} ฿/$</span>
+      <span class="d">${txt}</span>`;
+  } else {
+    $('mk-fx').hidden = true;
+  }
+
+  const st = mk.stock, first = st.history[0];
+  $('mk-stock').innerHTML = `<span class="k">สต็อกในโกดัง LME</span>
+    <span class="v num">${fmt(st.latest / 1000)}K ตัน</span>
+    <span class="d">${signed(st.change_1m)} ใน 1 เดือน · ${first.label} มี ${fmt(first.v / 1000)}K ตัน · สต็อกลด = ของในตลาดตึงขึ้น</span>
+    ${sparkline(st.history.map((h) => h.v))}`;
+
+  const sp = mk.spread;
+  $('mk-spread').innerHTML = `<span class="k">ส่วนต่าง 3-Month − Cash</span>
+    <span class="v num">${sp.latest >= 0 ? '+' : '−'}${CUR}${fmt(Math.abs(sp.latest))}</span>
+    <span class="d">${sp.latest >= 0 ? 'ราคาล่วงหน้าแพงกว่าราคาซื้อทันที (ของในตลาดพอ)' : 'ราคาซื้อทันทีแพงกว่าล่วงหน้า (ของในตลาดตึง)'} · เฉลี่ย 1 เดือน ${sp.avg_1m >= 0 ? '+' : '−'}${CUR}${fmt(Math.abs(sp.avg_1m))}</span>
+    ${sparkline(sp.history.map((h) => h.v), { zero: true })}`;
+  showSection('market', true);
+}
+
+/* ---------- การซื้อจริง ---------- */
+function renderBuys() {
+  const p = D.purchases;
+  if (!p) return;
+  const s = p.summary;
+  $('buy-sum').innerHTML = `<div><span class="big num ${s.avg_vs_month <= 0 ? 'good' : 'bad'}">${signed(s.avg_vs_month, 2)}</span>
+      <p class="note">จ่ายเทียบราคา LME เฉลี่ยของเดือนนั้น (ถ่วงน้ำหนักตามปริมาณ)</p></div>
+    <div><span class="big num">${s.count}</span><p class="note">ครั้งที่บันทึก · ${Math.round(s.share_below_avg * 100)}% ต่ำกว่าเฉลี่ยเดือน</p></div>`;
+  $('buy-table').innerHTML = p.rows.map((r) => `<tr><td>${thaiDate(r.date)}</td><td>${r.supplier || '–'}</td>
+    <td class="num ${r.vs_month_avg <= 0 ? 'good' : 'bad'}">${signed(r.vs_month_avg, 2)}</td>
+    <td class="num">${r.vs_day_cash == null ? '–' : signed(r.vs_day_cash, 2)}</td></tr>`).join('');
+  showSection('buys', true);
+}
+
+/* ---------- 2: ถาม AI ----------
+ * เลือกตัวตอบตามที่เปิดหน้า:
+ *   Apps Script (google.script.run) -> Gemini ฝั่ง server (askDashboard ใน Code.gs)
+ *   claude.ai (sample capability)   -> Claude
+ *   เปิดไฟล์ตรงๆ                     -> ซ่อนส่วนนี้ */
+const SUGGESTIONS = ['เทรนด์ตอนนี้แรงแค่ไหน', 'อีก 3 เดือนราคาจะอยู่ช่วงไหน', 'ควรตุนของไว้ไหม', 'ตัวเลขพวกนี้เชื่อได้แค่ไหน'];
+const MAX_TURNS = 12;
+
+function chatRules() {
+  const t = D.trend;
+  const facts = {
+    asof: D.asof, unit: D.unit, source: D.source,
+    price_cash_latest: D.price, price_usd: D.usd ? D.usd.price : D.price, yoy: D.yoy, month_to_date_avg: D.month_to_date_avg,
+    trend: { label: t.label, strength: trendStrength(t.gap), ma_1m: t.ma_short, ma_3m: t.ma_long, gap: t.gap, rule: t.rule,
+             hit_rate_next_month: t.hit_rate, naive_hit_rate: t.naive_hit_rate },
+    ranges_90pct_monthly_avg: D.forecast.map((f) => ({ month: f.label, low: f.low, mid: f.mid, high: f.high })),
+    range_coverage_backtest: D.coverage_overall,
+    monthly_avg_history: D.history.map((h) => ({ month: h.label, avg: h.avg })),
+    daily_ai_summary: D.ai_analysis ? D.ai_analysis.text : null,
+  };
+  return `คุณคือผู้ช่วยของฝ่ายจัดซื้อ ตอบคำถามเรื่องราคาอลูมิเนียม LME เป็นภาษาไทย สั้น กระชับ สุภาพ 2–5 ประโยค
+กติกา:
+- ใช้เฉพาะข้อมูลใน JSON ด้านล่าง ถ้าคำถามต้องใช้ข้อมูลที่ไม่มี (ข่าว, ราคาหลัง asof, ราคา supplier, โลหะอื่น) ให้บอกตรงๆ ว่าไม่มีข้อมูลนั้น
+- ห้ามแต่งราคาหรือพยากรณ์ราคาเป็นตัวเลขเดียว ให้ตอบเป็นช่วง 90% ตามข้อมูล และบอกว่าเป็นค่าเฉลี่ยของเดือนนั้น
+- ความแรงของเทรนด์ใช้คำตาม trend.strength เท่านั้น
+- เรื่องควรซื้อ/ตุนไหม: ให้ข้อสังเกตแบบกลางๆ ไม่สั่งให้ซื้อ และย้ำว่าเทรนด์ทายถูกประมาณ hit_rate
+- เปอร์เซ็นต์ใน JSON เป็นทศนิยม (0.0169 = 1.69%) ราคาเป็น ${UNIT} (ราคา LME ต้นทางเป็น USD: price_usd) เขียนตัวเลขมีจุลภาคเสมอ
+- ห้ามใช้ markdown
+
+ข้อมูล:
+${JSON.stringify(facts)}`;
+}
+
+async function pickChatBackend() {
+  if (window.google && google.script && google.script.run) {
+    return {
+      label: 'Gemini',
+      ask: (turns) => new Promise((resolve, reject) => {
+        google.script.run
+          .withSuccessHandler((text) => (text ? resolve({ text }) : reject({ code: 'empty_completion' })))
+          .withFailureHandler(() => reject({ code: 'upstream_error' }))
+          .askDashboard(turns[turns.length - 1].content);
+      }),
+    };
+  }
+  if (window.claude && typeof window.claude.use === 'function') {
+    const sample = await window.claude.use('sample');
+    if (!sample) return null;
+    return {
+      label: 'Claude',
+      ask: (turns, { signal, onText }) => sample([{ role: 'user', content: chatRules() }, ...turns], {
+        modelTier: 'quick', cache: false, signal, onText,
+      }),
+    };
+  }
+  return null;
+}
+
+/* แสดง/ซ่อนส่วน แล้วเรียงเลขส่วนใหม่ (1, 2, 3 …) ทั้งหัวข้อและเมนูลัด */
+function showSection(id, on) {
+  $(id).hidden = !on;
+  const link = document.querySelector(`.jump a[href="#${id}"]`);
+  if (link) link.hidden = !on;
+  numberSections();
+}
+function numberSections() {
+  let i = 0;
+  document.querySelectorAll('#view-alu main > .sec').forEach((sec) => {
+    if (sec.hidden) return;
+    i += 1;
+    sec.querySelector('.sec-head .n').textContent = i;
+    const link = document.querySelector(`.jump a[href="#${sec.id}"] .n`);
+    if (link) link.textContent = i;
+  });
+}
+
+/* ---------- แท็บ อลูมิเนียม / เหล็ก ----------
+ * เปิดเว็บมาที่อลูมิเนียมเสมอ · ลิงก์ที่ลงท้าย #steel เปิดหน้าเหล็กเลย */
+const HERO = {};  // เนื้อหาแถบหัวของแต่ละโลหะ – เติมใน renderTop / renderSteel
+function paintHero(h) {
+  $('hero-eyebrow').textContent = h.eyebrow;
+  $('hero-title').textContent = h.title;
+  $('asof').textContent = h.asof;
+  $('hero-price').textContent = h.price;
+  $('hero-unit').textContent = h.unit;
+  $('hero-thb').textContent = h.sub || '';
+  $('hero-thb').hidden = !h.sub;
+  $('hero-trend-t').textContent = h.trend;
+}
+function showMetal(key) {
+  if (!HERO[key]) key = 'alu';
+  for (const k of ['alu', 'steel']) {
+    $('view-' + k).hidden = k !== key;
+    $('tab-' + k).setAttribute('aria-selected', String(k === key));
+  }
+  paintHero(HERO[key]);
+}
+for (const k of ['alu', 'steel']) {
+  $('tab-' + k).addEventListener('click', () => {
+    showMetal(k);
+    try { history.replaceState(null, '', k === 'steel' ? '#steel' : '#'); } catch (e) { /* iframe */ }
+    window.scrollTo({ top: 0 });
+  });
+}
+function showChat(on) {
+  showSection('ask', on);
+  $('ask-open').hidden = !on;
+}
+
+async function setupChat() {
+  showChat(false);
+  const backend = await pickChatBackend();
+  if (!backend) return;
+  $('ask-by').textContent = 'ตอบโดย ' + backend.label;
+
+  const turns = [];
+  let ctl = null;
+  const thread = $('thread'), input = $('ask-input'), send = $('ask-send'), stop = $('ask-stop'), note = $('ask-note');
+  const ICON_AI = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l1.6 3.6 3.9.4-2.9 2.6.8 3.9L8 10l-3.4 2 .8-3.9-2.9-2.6 3.9-.4z"/></svg>';
+  const ICON_ME = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="8" cy="5.5" r="2.8"/><path d="M2.8 14c.6-2.8 2.7-4.3 5.2-4.3s4.6 1.5 5.2 4.3"/></svg>';
+  // คืนกล่องข้อความ (.msg) – แถวรอบๆ มี avatar + ชื่อผู้ส่ง
+  const addMsg = (cls, text) => {
+    const mine = cls.startsWith('me');
+    const row = document.createElement('div');
+    row.className = 'row ' + (mine ? 'me' : 'bot');
+    row.innerHTML = `<span class="avatar" aria-hidden="true">${mine ? ICON_ME : ICON_AI}</span>`
+      + `<div class="bubble-wrap"><span class="who">${mine ? 'คุณ' : 'AI (' + backend.label + ')'}</span><div></div></div>`;
+    const el = row.querySelector('.bubble-wrap > div');
+    el.className = 'msg ' + cls;
+    el.textContent = text;
+    el.remove = () => row.remove();  // ลบทั้งแถวเมื่อยกเลิก/ผิดพลาด
+    thread.append(row);
+    thread.scrollTop = thread.scrollHeight;
+    return el;
+  };
+  addMsg('bot', 'ถามได้เลยครับ เช่น เทรนด์ตอนนี้แรงไหม ช่วงราคาเดือนไหนเท่าไหร่ หรือตัวเลขเชื่อได้แค่ไหน');
+  const busy = (on) => { send.disabled = on; input.disabled = on; stop.hidden = !on; $('chips').querySelectorAll('button').forEach((b) => { b.disabled = on; }); };
+  const COPY = {
+    rate_limited: 'ถามถี่เกินไปหรือโควต้าเต็ม ลองใหม่อีกสักครู่',
+    session_expired: 'หมดเวลาเข้าสู่ระบบ ลงชื่อเข้าใหม่แล้วลองอีกครั้ง',
+    refused: 'คำถามนี้ตอบไม่ได้ ลองถามแบบอื่น',
+    empty_completion: 'ไม่ได้คำตอบ ลองถามใหม่อีกครั้ง หรือถามให้สั้นลง',
+    prompt_too_large: 'บทสนทนายาวเกินไป รีเฟรชหน้าแล้วเริ่มใหม่',
+  };
+
+  async function ask(question) {
+    question = question.trim();
+    if (!question || send.disabled) return;
+    addMsg('me', question);
+    turns.push({ role: 'user', content: question });
+    while (turns.length > MAX_TURNS) turns.splice(0, 2);
+    const bubble = addMsg('bot wait', 'กำลังคิด…');
+    note.textContent = '';
+    busy(true);
+    ctl = new AbortController();
+    const signal = ctl.signal;
+    try {
+      const { text, truncated } = await backend.ask(turns, {
+        signal,
+        onText: ({ text }) => { bubble.className = 'msg bot'; bubble.textContent = text; thread.scrollTop = thread.scrollHeight; },
+      });
+      if (signal.aborted) throw { code: 'cancelled' };  // Gemini ยกเลิกกลางทางไม่ได้ – แค่ไม่แสดงผล
+      bubble.className = 'msg bot';
+      bubble.textContent = text;
+      turns.push({ role: 'assistant', content: text });
+      if (truncated) note.textContent = 'คำตอบถูกตัด ลองถามให้แคบลง';
+    } catch (e) {
+      const code = e && e.code;
+      if (['not_granted', 'sampling_disabled', 'not_declared', 'capability_disabled', 'capability_removed'].includes(code)) {
+        bubble.remove(); turns.pop(); showChat(false); return;
+      }
+      if (e && e.text) { bubble.className = 'msg bot'; bubble.textContent = e.text; turns.push({ role: 'assistant', content: e.text }); }
+      else { bubble.remove(); turns.pop(); }
+      if (code !== 'cancelled') note.textContent = COPY[code] || 'เชื่อมต่อไม่สำเร็จ ลองส่งใหม่อีกครั้ง';
+    } finally {
+      busy(false);
+    }
+  }
+
+  for (const q of SUGGESTIONS) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = q;
+    b.addEventListener('click', () => ask(q));
+    $('chips').append(b);
+  }
+  $('composer').addEventListener('submit', (ev) => { ev.preventDefault(); const q = input.value; input.value = ''; ask(q); });
+  stop.addEventListener('click', () => ctl && ctl.abort());
+  showChat(true);
+}
+
+/* ปุ่ม LINE: line.me/R/ti/p/@id เปิดแชท bot (มือถือ) หรือหน้า QR (คอม) – ซ่อนถ้ายังไม่ได้ตั้ง LINE_OA_ID */
+function renderLine() {
+  const id = (D.line_oa_id || '').trim();
+  if (!id) return;
+  const url = 'https://line.me/R/ti/p/' + encodeURIComponent(id.startsWith('@') ? id : '@' + id);
+  for (const elId of ['line-fab', 'line-btn']) { $(elId).href = url; $(elId).hidden = false; }
+  $('line-id').textContent = id.startsWith('@') ? id : '@' + id;
+}
+
+/* เมนูลัด: เลื่อนไปยังส่วน (ใน iframe ของ Apps Script ลิงก์ # อาจไม่เลื่อนเอง) */
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener('click', (ev) => {
+    const el = document.getElementById(a.getAttribute('href').slice(1));
+    if (!el) return;
+    ev.preventDefault();
+    el.scrollIntoView({ block: 'start' });
+    if (el.id === 'ask') $('ask-input').focus({ preventScroll: true });
+  });
+});
+
+if (D) {
+  convertToTHB();
+  renderTop(); renderAI(); renderRange(); renderThb(); renderSteel(); renderMarket(); renderBuys(); renderAccuracy(); renderLine();
+  if (renderTrendLog('tlog', D.trend_log)) showSection('tlog', true);
+  if (D.steel && renderTrendLog('st-tlog', D.steel.trend_log)) $('st-tlog').hidden = false;
+  numberSections();
+  showMetal(location.hash === '#steel' ? 'steel' : 'alu');
+  setupChat();
+}
+</script>
+
+</body>
+</html>
